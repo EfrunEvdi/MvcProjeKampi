@@ -1,0 +1,49 @@
+﻿# 2 Ders (View Controller Ve Layout Kavramları)
+Layout - View - Controller yapılarını daha iyi kavrayabilmek için yapıları tek tek oluşturup detaylandıralım.
+
+" Controllers > Add > Controller... > MVC 5 Controller - Empty " adımlarını uygulayarak yeni bir tane CONTROLLER oluşturuyoruz.
+
+Projede yer alan her bir menü alanı bir controller olarak tutulacaktır. (başlık, kullanıcılar, yazılar vb.) Burada amaç SOLID presiplerine göre hareket etmektir. 
+
+SOLID yazılım prensipleri; geliştirilen yazılımın esnek, yeniden kullanılabilir, sürdürülebilir ve anlaşılır olmasını sağlayan, kod tekrarını önleyen prensipler bütünüdür.
+
+S — Single responsibility principle : Bir sınıfın yapması gereken sadece bir işi olmalıdır.
+
+O — Open closed principle : Bir sınıf ya da fonksiyon halihazırda var olan özellikleri korumalı ve değişikliğe izin vermemelidir.
+
+L — Liskov substitution principle : Kodlarımızda herhangi bir değişiklik yapmaya gerek duymadan alt sınıfları, türedikleri(üst) sınıfların yerine kullanabilmeliyiz.
+
+I — Interface segregation principle : Sorumlulukların hepsini tek bir arayüze toplamak yerine daha özelleştirilmiş birden fazla arayüz oluşturmalıyız.
+
+D — Dependency Inversion Principle : Sınıflar arası bağımlılıklar olabildiğince az olmalıdır özellikle üst seviye sınıflar alt seviye sınıflara bağımlı olmamalıdır.
+
+Oluşturulan Controller 'ın içinde bir tane "ActionResult" türünde index methodu hazır olarak gelir. Bu index metodunu bir VIEW oluşturmak için kullanacağız. Ancak öncelikle LAYOUT (sabit kalan alan) yapısını oluşturalım. 
+
+"Shared > Add > View..." adımlarını uygulayarak yeni bir VIEW oluşturuyoruz. Bu View herhangi bir layout 'u kullanmayacak yani "use a layout page" checkbox 'ını seçmezsek View 'in kendisi bir layout olur. Oluşturduğumuz layout yapısını tarayıcıda çalıştırmak istediğimizde bize izin vermeyecektir. Projenin buradan çalıştırılabilmesi için bu sayfanın bir controller 'ının olması gerekir. Controller da ki ilgili .cs sayfasında index() metoduna sağ tık yapıp Add View diyoruz. Eklenecek olan View az önce oluşturduğumuz Layout  'u kullanacak. Bu nedenle checkbox ı işaretleyip "..." butonuna tıklayıp Shared klasöründen ilgili layout 'u seçelim ve View i ekleyelim. Artık oluşturduğumuz sayfada sağ tık > View in Browser diyerek projeyi tarayıcıda çalıştırabiliriz. Ancak ondan önce yapmamız gereken oluşturduğumuz layout 'a sayfaları yüklerken bu sayfaları layout 'un hangi kısmına yükleyeceğimizi belirtmemiz gerekiyor. Bu belirtme işlemini @RenderBody() metodunu kullanıyoruz.
+
+‼️ Projenin HTML kısmında C# komutlarını kullanabilmek için ifadelerin başına @ sembolünü eklememiz gerekiyor.
+
+# 3 Ders (Katmanların Oluşturulması)
+Katmanlı mimari temelde 3 katmandan oluşmaktadır. Bu katmanlar genellik her projenizde olması gereken katmanlardır. ( Sunum - İş - Veri ) Geliştirici bu 3 katmandan daha fazla bir katmanlı yapıda oluşturabilir bu yapıya çok katmanlı mimari denilmektedir. 
+
+1. Sunum Katmanı (Presentation Layer) : Kullanıcı ile etkileşimin yapıldığı katmandır. Burada temel amaç kullanıcıya verileri göstermek ve kullanıcıdan gelen verileri Business Katmanı ile Data Access’e iletmektir.
+2. İş Katmanı (Business Layer) : Data Access  tarafında projeye çekilmiş olan veriler bu katmanda işlenir. Kullanıcıdan gelen veriler önce Business katmanına gider oradan da işlenerek Data Access katmanına aktarılır. Bu katmanda ayrıca bu verilere kimlerin erişeceğini belirtiyoruz. 
+3. Veri Katmanı (Data Access Layer) : Bu katmanda ekleme (Create), okuma (Read), güncelleme (Update) ve silme (Delete) gibi veritabanı işlemleri yapılmaktadır. Bu dört temel işlem CRUD olarak ifade edilir.
+4. Entity Layer : Veri tabanındaki tabloların ve içerisindeki sütunların tanımlanacağı ve bunların C# üzerinde class ve properties (özellikler) olarak ifade edileceği yapıların tutulduğu kısımdır.
+
+Bu dört katmanı projemize ekleyelim. Eklenen her katman yeni bir proje ögesi olarak karşımıza gelecektir.
+
+Solution alanına sağ tık > Add > New Project > Visual C# > Class Library (.NET Framework) adımlarını seçerek EntityLayer - DataAccessLayer - BusinessLayer katmanlarını sırasıyla oluşturalım. Oluşturduğumuz proje katmanları otomatik olarak "class1" isimin de bir class ile birlikte gelir. Biz bu class1 sınıfını silip kendi sınıflarımızı oluşturacağız.
+
+Projeyi ilk oluşturduğumuzda karşımıza çıkan ilk katman aslında bizim Sunum Katmanımıza karşılık geliyor. Bu nedenle başlangıçta projeyi adlandırırken sonuna UI eklemek mantıklı bir yaklaşım olacaktır.
+
+# 4 Ders (Entity Katmanı Sınıflarının Oluşturulması)
+Entity katmanında oluşturacağımız tabloları ve onların özelliklerini belirtiyoruz.
+
+Heading (Başlık) / Content (İçerik) / Writer (Yazar) / Contact (İletişim) / About (Hakkında) / Category (Kategori) 
+
+EntityLayer sağ tık > Add > New Folder  diyerek "Concrete" isimli yeni bir klasör oluşturuyoruz. Bu klasörde SOMUT olarak tutulan ifadeler yer alacaktır. SOYUT olarak tutulan ifadeleri de ilerleyen adımlarda "Abstract" isimli klasör de tutacağız.
+
+Concrete klasörüne sırası ile Heading / Content / Writer / Contact / About / Category sınıflarını ekliyoruz. Eklediğimiz sınıfların erişim belirleyicilerini (Access Modifiers) "public" yapmalıyız ki diğer alanlardan da erişim sağlanabilsin. 
+
+Sırada oluşturduğumuz her sınıfın (properties) özelliklerini eklemek kaldı. prop yazıp tabx2 yaptığımızda properties formu otomatik olarak gelecektir.
