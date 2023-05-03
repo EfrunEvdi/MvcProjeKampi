@@ -37,7 +37,7 @@ Solution alanına sağ tık > Add > New Project > Visual C# > Class Library (.NE
 
 Projeyi ilk oluşturduğumuzda karşımıza çıkan ilk katman aslında bizim Sunum Katmanımıza karşılık geliyor. Bu nedenle başlangıçta projeyi adlandırırken sonuna UI eklemek mantıklı bir yaklaşım olacaktır.
 
-# 4 Ders (Entity Katmanı Sınıflarının Oluşturulması)
+# 4 - 5 Ders (Entity Katmanı Sınıflarının Oluşturulması)
 Entity katmanında oluşturacağımız tabloları ve onların özelliklerini belirtiyoruz.
 
 Heading (Başlık) / Content (İçerik) / Writer (Yazar) / Contact (İletişim) / About (Hakkında) / Category (Kategori) 
@@ -47,3 +47,27 @@ EntityLayer sağ tık > Add > New Folder  diyerek "Concrete" isimli yeni bir kla
 Concrete klasörüne sırası ile Heading / Content / Writer / Contact / About / Category sınıflarını ekliyoruz. Eklediğimiz sınıfların erişim belirleyicilerini (Access Modifiers) "public" yapmalıyız ki diğer alanlardan da erişim sağlanabilsin. 
 
 Sırada oluşturduğumuz her sınıfın (properties) özelliklerini eklemek kaldı. prop yazıp tabx2 yaptığımızda properties formu otomatik olarak gelecektir.
+
+# 6 Ders (İlişkilerin Oluşturulması 1)
+İlişki oluşturmak içim Ctaegor sınıfında :
+
+public ICollection<Heading> Headings { get; set; }
+
+Heading sınıfında :
+
+public int CategoryID { get; set; }
+public virtual Category Category { get; set; }
+
+propertylerini yazdık.
+
+Daha sonra Heading sınıfına :
+
+public ICollection<Content> Contents { get; set; }
+
+Content sınıfına :
+
+public int HeadingID { get; set; }
+public virtual Heading Heading { get; set; }
+
+yazarak ilişkileri oluşturduk.
+
