@@ -71,3 +71,8 @@ public virtual Heading Heading { get; set; }
 
 yazarak ilişkileri oluşturduk.
 
+# 7 Ders (İlişkilerin Oluşturulması 2)
+Bu derste Writer tablosu ile Heading ve Writer tablolarını ilişkilendirdik.
+
+# 8 Ders (Key Ve String Length Attributeleri)
+-> EntityFramework (6.4.4) paketini EntityLayer'a kurduktan sonra [Key] ile primary key [StringLength] ile karakter sınırı tanımladık.
