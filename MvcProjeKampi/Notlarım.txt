@@ -76,3 +76,15 @@ Bu derste Writer tablosu ile Heading ve Writer tablolarını ilişkilendirdik.
 
 # 8 Ders (Key Ve String Length Attributeleri)
 -> EntityFramework (6.4.4) paketini EntityLayer'a kurduktan sonra [Key] ile primary key [StringLength] ile karakter sınırı tanımladık.
+
+# 9 Ders (Context Sınıfı)
+Bu derste ilk olarak DataAccessLayer'a
+EntityFramework (6.4.4)
+paketini yüklüyoruz. Devamında Concrete klasörünü içine Context sınıfını oluşturup DbSet propertilerini yazıyoruz.
+
+# 10 Ders (Web Config Yapılandırması ve Bağlantı Ayarı)
+Bu derste UI katmanındaki web.config klasörüne aşağıdaki kodu yazıyoruz.
+<connectionStrings>
+		<add name="Context" connectionString="data source=(localdb)\MSSQLLOCALDB; initial catalog=MvcKampDB; integrated security=true" providerName="System.Data.SqlClient"/>
+	</connectionStrings>
+
