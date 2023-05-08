@@ -52,6 +52,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Concrete\Context.cs" />
+    <Compile Include="Migrations\202305081903503_firstmig.cs" />
+    <Compile Include="Migrations\202305081903503_firstmig.designer.cs">
+      <DependentUpon>202305081903503_firstmig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +68,11 @@
       <Project>{7C07DDFB-7047-4699-AC2B-81D289CF31D3}</Project>
       <Name>EntityLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202305081903503_firstmig.resx">
+      <DependentUpon>202305081903503_firstmig.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

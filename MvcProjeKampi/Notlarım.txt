@@ -86,5 +86,10 @@ paketini yüklüyoruz. Devamında Concrete klasörünü içine Context sınıfı
 Bu derste UI katmanındaki web.config klasörüne aşağıdaki kodu yazıyoruz.
 <connectionStrings>
 		<add name="Context" connectionString="data source=(localdb)\MSSQLLOCALDB; initial catalog=MvcKampDB; integrated security=true" providerName="System.Data.SqlClient"/>
-	</connectionStrings>
+</connectionStrings>
 
+# 11 Ders (Migrations ve Veri Tabanının Oluşturulması)
+Bu derste migration oluşturmak için önce enable-migration ardından update-database yaptık.
+
+# 12 Ders (Add Migration İşlemi)
+Bir önceki derste aldığımız hatayı int? yaptık ve add-migration ile güncellemeyi sql'e yansıttık.
