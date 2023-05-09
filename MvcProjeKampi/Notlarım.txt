@@ -93,3 +93,12 @@ Bu derste migration oluşturmak için önce enable-migration ardından update-da
 
 # 12 Ders (Add Migration İşlemi)
 Bir önceki derste aldığımız hatayı int? yaptık ve add-migration ile güncellemeyi sql'e yansıttık.
+
+# 13 Ders (Örnek SQL Veri Girişleri)
+Sql'de veri girişi yaptık
+
+# 14 Ders (Abstract Ve Interface Bileşenleri)
+Bu derste DataAccessLayer içine Abstract klasörünü içine ICategoryDal interfaceini ekliyoruz.
+
+
+
