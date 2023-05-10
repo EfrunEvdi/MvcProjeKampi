@@ -100,5 +100,8 @@ Sql'de veri girişi yaptık
 # 14 Ders (Abstract Ve Interface Bileşenleri)
 Bu derste DataAccessLayer içine Abstract klasörünü içine ICategoryDal interfaceini ekliyoruz.
 
+# 15 Ders (Repository Sınıfı Ve Metotların İçinin Doldurulması)
+DataAccessLayer'da Concrete klasörünü açıp içine CategoryRepository classını dahil edip doldurduk. Update'te sadece değişiklikleri kaydettik.
 
-
+# 16 Ders (IRepository Interface)
+Dal içine IWriterDal ı açtık ama DRY yüzünden bunun yanlış olduğunu biliyoruz. Bu yüzden IRepository'i ekleyip bunun içini doldurduk.
