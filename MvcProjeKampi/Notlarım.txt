@@ -105,3 +105,9 @@ DataAccessLayer'da Concrete klasörünü açıp içine CategoryRepository class�
 
 # 16 Ders (IRepository Interface)
 Dal içine IWriterDal ı açtık ama DRY yüzünden bunun yanlış olduğunu biliyoruz. Bu yüzden IRepository'i ekleyip bunun içini doldurduk.
+
+# 17 Ders (Generic Interface)
+Bu derste Dal içindeki Abstract klasörüne tüm enityler için interface oluşturduk. Devamında WriterRepositoryi oluşturduk ama bunu da generic hale getireceğiz. 
+
+# 18 Ders (Generic Repository)
+Bu derste GenericRepositoryi oluşturup doldurduk ve dersi bitirdik.
