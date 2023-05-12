@@ -111,3 +111,9 @@ Bu derste Dal içindeki Abstract klasörüne tüm enityler için interface oluş
 
 # 18 Ders (Generic Repository)
 Bu derste GenericRepositoryi oluşturup doldurduk ve dersi bitirdik.
+
+# 19 Ders (Business Layer) 
+BusinessLayer'a referans olarak DAL ve EL katmanlarını veriyoruz ve EntityFramework (6.4.4) paketini indiriyoruz. Ardıdnan Abstract ve Concrete klasörlerini bu katmana dahil ediyoruz. Concrete içine CategoryManager classını açıp içini dolduruyoruz ve dersi bitiriyoruz.
+
+# 20 Ders (Tablo Kullanımı (Sertifika Görev 1/4))
+Bu derste bir controller açık tablo yapısına değinildi.

@@ -60,6 +60,7 @@
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repositories\CategoryRepository.cs" />
+    <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="Concrete\Repositories\WriterRepository.cs" />
     <Compile Include="Migrations\202305081903503_firstmig.cs" />
     <Compile Include="Migrations\202305081903503_firstmig.designer.cs">
