@@ -37,13 +37,14 @@
 <body>
     <div class="container">
         <h1>Bootstrap Tablo Örneği</h1>
-        <table>
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Kategori Adı</th>
                     <th scope="col">Açıklama</th>
                     <th scope="col">Durum</th>
+                    <th scope="col">Güncelle</th>
                 </tr>
             </thead>
             <tbody>
@@ -52,15 +53,35 @@
                     <td>Eğitim</td>
                     <td>Açıklama yapıldı.</td>
                     <td>True</td>
+                    <td><button class="btn btn-outline-primary">Güncelle</button></td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
                     <td>Spor</td>
                     <td>Açıklama yapıldı.</td>
                     <td>True</td>
+                    <td><button class="btn btn-outline-primary">Güncelle</button></td>
                 </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Kitap</td>
+                    <td>Açıklama yapıldı.</td>
+                    <td>True</td>
+                    <td><button class="btn btn-outline-primary">Güncelle</button></td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Spor</td>
+                    <td>Açıklama bekleniyor.</td>
+                    <td>True</td>
+                    <td><button class="btn btn-outline-primary">Güncelle</button></td>
+                </tr>
+
             </tbody>
         </table>
+        <button class="btn btn-primary">Yeni Kategori</button>
+        <button class="btn btn-warning">Kategori Listesi</button>
+        <button class="btn btn-info">Kategori Açıklamaları</button>
     </div>
 </body>
 </html>

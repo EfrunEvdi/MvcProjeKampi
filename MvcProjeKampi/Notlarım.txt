@@ -117,3 +117,17 @@ BusinessLayer'a referans olarak DAL ve EL katmanlarını veriyoruz ve EntityFram
 
 # 20 Ders (Tablo Kullanımı (Sertifika Görev 1/4))
 Bu derste bir controller açık tablo yapısına değinildi.
+
+# 21 Ders (Bootstrap)
+Bu derste bootstrapten bahsedildi.
+
+# 22 Ders (Kategorilerin Listelenmesi)
+Bu derste ilk olarak UI katmanına diğer tüm katmanları referans verdik devamında EntityFramework (6.4.4) paketini indirdik ve CategoryController'a
+
+ public ActionResult GetCategoryList()
+        {
+            var categoryvalues = cm.GelAllBL();
+            return View(categoryvalues);
+        }
+
+yazdık ve bu sayfaya ait viewi açarak table yapısı ve foeach döngüsü ile verileri listelettik.
