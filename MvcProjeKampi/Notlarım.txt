@@ -131,3 +131,9 @@ Bu derste ilk olarak UI katmanına diğer tüm katmanları referans verdik devam
         }
 
 yazdık ve bu sayfaya ait viewi açarak table yapısı ve foeach döngüsü ile verileri listelettik.
+
+# 23 Ders (Break Point)
+Bu derste breakpoint ile işlem yapmayı öğrendik.
+
+# 24 Ders (Yeni Kategori Ekleme)
+Bu derste kategori nasıl eklenmez onu öğrendik. :D
