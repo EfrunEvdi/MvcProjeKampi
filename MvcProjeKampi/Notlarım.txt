@@ -137,3 +137,8 @@ Bu derste breakpoint ile işlem yapmayı öğrendik.
 
 # 24 Ders (Yeni Kategori Ekleme)
 Bu derste kategori nasıl eklenmez onu öğrendik. :D
+
+# 25 Ders (HttpGet ve HttpPost Attributeleri)
+Bu derste yeni kategori ekleme sayfasını öğrendik.
+
+# 26 Ders (Ekleme Hataları)
