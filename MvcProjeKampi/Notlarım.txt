@@ -142,3 +142,19 @@ Bu derste kategori nasıl eklenmez onu öğrendik. :D
 Bu derste yeni kategori ekleme sayfasını öğrendik.
 
 # 26 Ders (Ekleme Hataları)
+Bu derste Manager'daki hatalara baktık.
+
+# 27 Ders (Business Abstract & ICategoryService)
+Bu derste ilk olarak ICategoryService adlı interfacei Business/Abstract içine dahil ediyoruz. İçini doldurduk.
+
+# 28 Ders (Constructor Business Metot)
+
+Dependency Injection (Bağımlılık Enjeksiyonu), bir yazılım tasarım desenidir ve nesne yönelimli programlamada kullanılır. Bu desen, bir nesnenin bağımlı olduğu diğer nesneleri dışarıdan sağlanmasını sağlar, böylece bağımlılıkların esnek bir şekilde yönetilmesini ve test edilmesini kolaylaştırır.
+
+Bağımlılık enjeksiyonu, bir nesnenin bağımlı olduğu diğer nesneleri parametreler veya setter metotları aracılığıyla dışarıdan almasını sağlar. Bu şekilde, bir nesne, bağımlı olduğu nesneleri doğrudan yaratmak veya başlatmak zorunda kalmaz. Bunun yerine, bağımlılıklar dışarıdan enjekte edilir ve nesne bu enjekte edilmiş bağımlılıkları kullanır.
+
+Bağımlılık enjeksiyonu, yazılımın daha modüler, esnek ve test edilebilir olmasını sağlar. Bağımlılıkların dışarıdan enjekte edilebilmesi, nesneler arasındaki sıkı bağlantıyı azaltır ve bileşenlerin daha bağımsız hale gelmesini sağlar. Ayrıca, bağımlılıkların sahte veya taklit edilmiş nesnelerle değiştirilebilmesi, birim testlerin kolayca yapılabilmesini sağlar.
+
+Bağımlılık enjeksiyonu, genellikle bağımlılıkları arayüzler veya soyut sınıflar üzerinden tanımlayarak ve bağımlılıkları enjekte eden bir "bağımlılık enjektörü" veya "konteyner" kullanarak gerçekleştirilir. Bağımlılık enjeksiyonu, Java, C#, PHP gibi birçok nesne yönelimli programlama dilinde yaygın olarak kullanılan bir desendir.
+
+Bu derste Dal içine EntityFraweork'u dahil ederek dersi bitirdik.

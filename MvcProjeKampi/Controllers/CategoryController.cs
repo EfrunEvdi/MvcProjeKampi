@@ -11,7 +11,7 @@ namespace MvcProjeKampi.Controllers
 {
     public class CategoryController : Controller
     {
-        CategoryManager cm = new CategoryManager();
+        //CategoryManager cm = new CategoryManager();
 
         // GET: Category
         public ActionResult Index()
@@ -21,8 +21,9 @@ namespace MvcProjeKampi.Controllers
 
         public ActionResult GetCategoryList()
         {
-            var categoryvalues = cm.GelAllBL();
-            return View(categoryvalues);
+            //var categoryvalues = cm.GelAllBL();
+            //return View(categoryvalues);
+            return View();
         }
         [HttpGet]
         public ActionResult AddCategory()
@@ -33,7 +34,7 @@ namespace MvcProjeKampi.Controllers
         [HttpPost]
         public ActionResult AddCategory(Category category)
         {
-            cm.CategoryAddBL(category);
+            // cm.CategoryAddBL(category);
             return RedirectToAction("GetCategoryList");
         }
     }
