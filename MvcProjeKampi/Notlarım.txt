@@ -164,3 +164,9 @@ Bu derste tüm entityler için Ef klasöründe gerekli classları açtık ve cat
 
 # 30 Ders (FluentValidation)
 Bu derste Business/ValidationRules/CategoryValidator u doldurduk.
+
+# 31 Ders (Validasyon İşlemi)
+Bu derste categoryadd işlemini validation ile controller'a tanımladık.
+
+# 32 Ders (Validation Messagefor ile Validator Sınıfındaki Mesajların UI'da Listelenmesi)
+Bu derste view tarafında kuralları gösterttik.

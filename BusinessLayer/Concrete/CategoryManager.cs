@@ -19,21 +19,26 @@ namespace BusinessLayer.Concrete
             _categoryDal = categoryDal;
         }
 
+        public void CategoryAdd(Category category)
+        {
+            _categoryDal.Insert(category);
+        }
+
         public List<Category> GetList()
         {
             return _categoryDal.List();
         }
 
-        public void CategoryAddBL(Category category)
-        {
-            if (category.CategoryName == "" || category.CategoryStatus == false || category.CategoryName.Length <= 2)
-            {
-                // hata mesajı
-            }
-            else
-            {
-                _categoryDal.Insert(category);
-            }
-        }
+        //public void CategoryAddBL(Category category)
+        //{
+        //    if (category.CategoryName == "" || category.CategoryStatus == false || category.CategoryName.Length <= 2)
+        //    {
+        //        // hata mesajı
+        //    }
+        //    else
+        //    {
+        //        _categoryDal.Insert(category);
+        //    }
+        //}
     }
 }
