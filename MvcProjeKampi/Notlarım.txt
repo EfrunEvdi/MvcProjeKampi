@@ -170,3 +170,9 @@ Bu derste categoryadd işlemini validation ile controller'a tanımladık.
 
 # 32 Ders (Validation Messagefor ile Validator Sınıfındaki Mesajların UI'da Listelenmesi)
 Bu derste view tarafında kuralları gösterttik.
+
+# 33 Ders (Temanın Yüklenmesi)
+Bu derste projeye admin templateini yükledik.
+
+# 34 Ders (Temanın Düzenlenmesi)
+Bu derste projenin layotunu ayarladık.
