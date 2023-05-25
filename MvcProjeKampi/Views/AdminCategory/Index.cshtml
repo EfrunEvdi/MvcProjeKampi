@@ -24,7 +24,7 @@
                         </tr>
                     </thead>
                     <tbody class="text-center">
-                        @foreach (var item in Model)
+                       @foreach (var item in Model)
                         {
                             <tr>
                                 <td>@item.CategoryID</td>
@@ -33,10 +33,10 @@
                                     <a href="#" class="btn btn-outline-info col-md-3">Başlıklar</a>
                                     <a href="#" class="btn btn-outline-warning col-md-3">Güncelle</a>
 
-                                    <a href="#" class="btn btn-outline-danger col-md-3">Sil</a>
+                                    <a href="/AdminCategory/DeleteCategory/@item.CategoryID" class="btn btn-outline-danger col-md-3">Sil</a>
                                 </td>
 
-                                @if (item.CategoryStatus == true)
+                               @if (item.CategoryStatus == true)
                                 {
                                     <td><span class="badge bg-info">Aktif</span></td>
                                 }

@@ -182,3 +182,9 @@ Bu derste navbar ve ikonları yaptık.
 
 # 36 Ders (Sidebar ile Beraber Kategori İşlemleri)
 Bu derste admin panelindeki categoryleri listeleme ve ekleme işlemlerini yaptık.
+
+# 37 Ders (GetByID)
+Bu derste category silebilmek için IRepository, GenericRepository ve Business katmanlarına GetByID için gerekli kodları yazdık.
+
+# 38 Ders (Kategori Silme İşlemi)
+Bu derste kategori silme işlemini tamamladık.
