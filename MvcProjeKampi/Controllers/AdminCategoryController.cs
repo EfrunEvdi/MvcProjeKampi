@@ -53,5 +53,32 @@ namespace MvcProjeKampi.Controllers
             cm.CategoryDelete(categoryValues);
             return RedirectToAction("Index", "AdminCategory");
         }
+
+        [HttpGet]
+        public ActionResult UpdateCategory(int id)
+        {
+            var categoryValues = cm.GetByID(id);
+            return View(categoryValues);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateCategory(Category category)
+        {
+            CategoryValidator categoryValidator = new CategoryValidator();
+            ValidationResult results = categoryValidator.Validate(category);
+            if (results.IsValid)
+            {
+                cm.CategoryUpdate(category);
+                return RedirectToAction("Index", "AdminCategory");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
+        }
     }
 }

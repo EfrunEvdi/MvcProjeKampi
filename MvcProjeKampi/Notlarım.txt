@@ -188,3 +188,9 @@ Bu derste category silebilmek için IRepository, GenericRepository ve Business k
 
 # 38 Ders (Kategori Silme İşlemi)
 Bu derste kategori silme işlemini tamamladık.
+
+# 39 Ders (Güncellenecek Bilgilerin Getirilmesi)
+Bu derste güncellenecek veriyi getirdik
+
+# 40 Ders (Güncelleme İşlemi & Sertifika Görevi)
+Bu derste güncelleme kısmının post tarfını yapıp istatistik ödevini yaptık.

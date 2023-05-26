@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h5 class="mt-4 mb-2">İstatistikler <code> :) </code></h5>
+<div class="row">
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-info">
+            <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Toplam Kategori Sayısı</span>
+                <span class="info-box-number">@ViewBag.TKS</span>
+
+                <div class="progress">
+                    <div class="progress-bar" style="width: 100%"></div>
+                </div>
+                @*<span class="progress-description">
+                        70% Increase in 30 Days
+                    </span>*@
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-success">
+            <span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Yazılım Kategorisine Ait Başlık Sayısı</span>
+                <span class="info-box-number">@ViewBag.YKS</span>
+
+                <div class="progress">
+                    <div class="progress-bar" style="width: 100%"></div>
+                </div>
+                @*<span class="progress-description">
+                        70% Increase in 30 Days
+                    </span>*@
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-warning">
+            <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Yazar Adında "a" Harfi Olan Kişi Sayısı</span>
+                <span class="info-box-number">@ViewBag.AYS</span>
+
+                <div class="progress">
+                    <div class="progress-bar" style="width: 100%"></div>
+                </div>
+                @*<span class="progress-description">
+                        70% Increase in 30 Days
+                    </span>*@
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-danger">
+            <span class="info-box-icon"><i class="fas fa-comments"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">En Fazla Başlığa Sahip Kategori Sayısı</span>
+                <span class="info-box-number">@ViewBag.EBS</span>
+
+                <div class="progress">
+                    <div class="progress-bar" style="width: 100%"></div>
+                </div>
+                @*<span class="progress-description">
+                        70% Increase in 30 Days
+                    </span>*@
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-secondary">
+            <span class="info-box-icon"><i class="fas fa-comments"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">True - False Sayısı</span>
+                <span class="info-box-number">@ViewBag.TF</span>
+
+                <div class="progress">
+                    <div class="progress-bar" style="width: 100%"></div>
+                </div>
+                @*<span class="progress-description">
+                        70% Increase in 30 Days
+                    </span>*@
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+</div>
+
