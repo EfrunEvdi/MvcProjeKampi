@@ -5,54 +5,74 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<section class="content">
+    <div class="container-fluid">
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">Kategori Listesi</h3>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body">
-                <table class="table table-hover">
-                    <thead class="text-center">
-                        <tr>
-                            <th style="width: 10px">#</th>
-                            <th>Kategori Adı</th>
-                            <th>İşlem Seçiniz</th>
-                            <th>Durum</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-center">
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td>@item.CategoryID</td>
-                                <td>@item.CategoryName</td>
-                                <td>
-                                    <a href="#" class="btn btn-outline-info col-md-3">Başlıklar</a>
-                                    <a href="/AdminCategory/UpdateCategory/@item.CategoryID" class="btn btn-outline-warning col-md-3">Güncelle</a>
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Kategori Listesi</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/AdminCategory/Index">Kategori Listesi</a></li>
+                            @*<li class="breadcrumb-item active">Contacts</li>*@
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
 
-                                    <a href="/AdminCategory/DeleteCategory/@item.CategoryID" class="btn btn-outline-danger col-md-3">Sil</a>
-                                </td>
-
-                                @if (item.CategoryStatus == true)
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Kategori Listesi</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead class="text-center">
+                                <tr>
+                                    <th style="width: 10px">#</th>
+                                    <th>Kategori Adı</th>
+                                    <th>İşlem Seçiniz</th>
+                                    <th>Durum</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                @foreach (var item in Model)
                                 {
-                                    <td><span class="badge bg-info">Aktif</span></td>
+                                    <tr>
+                                        <td>@item.CategoryID</td>
+                                        <td>@item.CategoryName</td>
+                                        <td>
+                                            <a href="#" class="btn btn-outline-info col-md-3">Başlıklar</a>
+                                            <a href="/AdminCategory/UpdateCategory/@item.CategoryID" class="btn btn-outline-warning col-md-3">Güncelle</a>
+
+                                            <a href="/AdminCategory/DeleteCategory/@item.CategoryID" class="btn btn-outline-danger col-md-3">Sil</a>
+                                        </td>
+
+                                        @if (item.CategoryStatus == true)
+                                        {
+                                            <td><span class="badge bg-info">Aktif</span></td>
+                                        }
+                                        else
+                                        {
+                                            <td><span class="badge bg-danger">Pasif</span></td>
+                                        }
+                                    </tr>
                                 }
-                                else
-                                {
-                                    <td><span class="badge bg-danger">Pasif</span></td>
-                                }
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-            <!-- /.card-body -->
-            <div class="card-footer clearfix">
-                <a href="/AdminCategory/AddCategory/" class="btn btn-outline-primary col-md-12">Yeni Kategori Ekle!</a>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer clearfix">
+                        <a href="/AdminCategory/AddCategory/" class="btn btn-outline-primary col-md-12">Yeni Kategori Ekle!</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>

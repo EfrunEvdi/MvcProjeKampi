@@ -1,0 +1,80 @@
+﻿@model EntityLayer.Concrete.Writer
+
+@{
+    ViewBag.Title = "AddWriter";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="content">
+    <div class="container-fluid">
+
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Yeni Yazar Ekleme Sayfası</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/Writer/Index">Yazar Listesi</a></li>
+                            <li class="breadcrumb-item active">Yeni Yazar Ekleme Sayfası</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+                <!-- general form elements -->
+                <div class="card card-secondary">
+                    <div class="card-header">
+                        <h3 class="card-title">Yeni Yazar Ekleme Formu</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form method="post">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="">İsim Soyisim</label>
+                                <div class="row">
+                                    <input type="text" class="form-control col-6" placeholder="Yazar ismini giriniz." name="WriterName">
+                                    @Html.ValidationMessageFor(x => x.WriterName)
+                                    <input type="text" class="form-control col-6" placeholder="Yazar soyismini giriniz." name="WriterSurname">
+                                    @Html.ValidationMessageFor(x => x.WriterSurname)
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Hakkında</label>
+                                <input type="text" class="form-control" placeholder="Yazara ait açıklamayı giriniz." name="WriterAbout">
+                                @Html.ValidationMessageFor(x => x.WriterAbout)
+                            </div>
+                            <div class="form-group">
+                                <label for="">E-Posta</label>
+                                <input type="text" class="form-control" placeholder="Yazara ait E-Posta adresini giriniz." name="WriterMail">
+                                @Html.ValidationMessageFor(x => x.WriterMail)
+                            </div>
+                            <div class="form-group">
+                                <label for="">Şifre</label>
+                                <input type="text" class="form-control" placeholder="Yazara ait şifreyi giriniz." name="WriterPassword">
+                                @Html.ValidationMessageFor(x => x.WriterPassword)
+                            </div>
+                            <div class="form-group">
+                                <label for="">Yazar Görsel</label>
+                                <input type="text" class="form-control" placeholder="Yazara ait görsel uzantısını giriniz." name="WriterImage">
+                                @Html.ValidationMessageFor(x => x.WriterImage)
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-outline-primary col-md-12">Yeni Yazar Ekle!</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -194,3 +194,15 @@ Bu derste güncellenecek veriyi getirdik
 
 # 40 Ders (Güncelleme İşlemi & Sertifika Görevi)
 Bu derste güncelleme kısmının post tarfını yapıp istatistik ödevini yaptık.
+
+# 41 Ders (Entity State Komutları)
+Bu derste GenericRepository i state komutları ile güncelledik.
+
+# 42 Ders (Yazar İşlemleri)
+Bu derste yazar işlemleri için her şeyden önce BusinessLayerdaki IWriterService ve WriterManager sınıflarını ekledik ve doldurduk. Devamında tüm yazarları table yapısı ile listelettik.
+
+# 43 Ders (Yazar Profilleri Listesi)
+Bu derste yazar listesi güzelleştirdik.
+
+# 44 Ders (Add Migration & Yazar İşlemleri Devamı)
+Bu derste yazar entitysini güncelledik ve index tarafında güncellemeler yaptık.
