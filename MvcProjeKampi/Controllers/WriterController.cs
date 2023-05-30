@@ -49,5 +49,35 @@ namespace MvcProjeKampi.Controllers
 
             return View();
         }
+
+        [HttpGet]
+        public ActionResult EditWriter(int id)
+        {
+            var WriterValues = wm.GetByID(id);
+            return View(WriterValues);
+        }
+
+        [HttpPost]
+        public ActionResult EditWriter(Writer writer)
+        {
+            WriterValidator WriterValidator = new WriterValidator();
+            ValidationResult results = WriterValidator.Validate(writer);
+
+            if (results.IsValid)
+            {
+                wm.WriterUpdate(writer);
+                return RedirectToAction("Index", "Writer");
+            }
+
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+
+            return View();
+        }
     }
 }

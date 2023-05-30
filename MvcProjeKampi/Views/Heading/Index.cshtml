@@ -1,0 +1,72 @@
+﻿@using EntityLayer.Concrete
+@model List<Heading>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="content">
+    <div class="container-fluid">
+
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Başlık Listesi</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Başlık Listesi</a></li>
+                            @*<li class="breadcrumb-item active">Contacts</li>*@
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Başlık Listesi</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead class="text-center">
+                                <tr>
+                                    <th style="width: 10px">#</th>
+                                    <th>Başlık</th>
+                                    <th>Kategori</th>
+                                    <th>İşlem Seçiniz</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.HeadingID</td>
+                                        <td>@item.HeadingName</td>
+                                        <td>@item.Category.CategoryName</td>
+                                        <td>
+                                            <a href="#" class="btn btn-outline-info col-md-3">Başlıklar</a>
+                                            <a href="#" class="btn btn-outline-warning col-md-3">Güncelle</a>
+
+                                            <a href="#" class="btn btn-outline-danger col-md-3">Sil</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer clearfix">
+                        <a href="#" class="btn btn-outline-primary col-md-12">Yeni Başlık Ekle!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

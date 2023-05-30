@@ -206,3 +206,9 @@ Bu derste yazar listesi güzelleştirdik.
 
 # 44 Ders (Add Migration & Yazar İşlemleri Devamı)
 Bu derste yazar entitysini güncelledik ve index tarafında güncellemeler yaptık.
+
+# 45 Ders (Yazar İşlemlerinin Tamamlanması)
+Bu derste yazar güncelleme sayfasını
+
+# 46 Ders (Başlık İşlemleri)
+Bu derste Başlıkları listeletme işlerini yaptık.

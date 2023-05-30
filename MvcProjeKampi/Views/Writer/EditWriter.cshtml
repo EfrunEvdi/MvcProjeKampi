@@ -1,7 +1,7 @@
 ﻿@model EntityLayer.Concrete.Writer
 
 @{
-    ViewBag.Title = "AddWriter";
+    ViewBag.Title = "EditWriter";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -12,12 +12,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Yeni Yazar Ekleme Sayfası</h1>
+                        <h1>Yazar Güncelleme Sayfası</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/Writer/Index">Yazar Listesi</a></li>
-                            <li class="breadcrumb-item active">Yeni Yazar Ekleme Sayfası</li>
+                            <li class="breadcrumb-item active">Yazar Güncelleme Sayfası</li>
                         </ol>
                     </div>
                 </div>
@@ -30,17 +30,18 @@
                 <!-- general form elements -->
                 <div class="card card-secondary">
                     <div class="card-header">
-                        <h3 class="card-title">Yeni Yazar Ekleme Formu</h3>
+                        <h3 class="card-title">Yazar Güncelleme Formu</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
                     <form method="post">
                         <div class="card-body">
                             <div class="form-group">
+                                @Html.HiddenFor(x => x.WriterID)
                                 <label for="">İsim Soyisim</label>
                                 <div class="row">
-                                    <input type="text" class="form-control col-6" placeholder="Yazar ismini giriniz." name="WriterName">
-                                    <input type="text" class="form-control col-6" placeholder="Yazar soyismini giriniz." name="WriterSurname">
+                                    @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control col-6" })
+                                    @Html.TextBoxFor(x => x.WriterSurname, new { @class = "form-control col-6" })
 
                                     @Html.ValidationMessageFor(x => x.WriterName)
                                     @Html.ValidationMessageFor(x => x.WriterSurname)
@@ -48,33 +49,33 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Unvan</label>
-                                <input type="text" class="form-control" placeholder="Yazara ait unvanı giriniz." name="WriterTitle">
+                                @Html.TextBoxFor(x => x.WriterTitle, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(x => x.WriterTitle)
                             </div>
                             <div class="form-group">
                                 <label for="">Hakkında</label>
-                                <input type="text" class="form-control" placeholder="Yazara ait açıklamayı giriniz." name="WriterAbout">
+                                @Html.TextBoxFor(x => x.WriterAbout, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(x => x.WriterAbout)
                             </div>
                             <div class="form-group">
                                 <label for="">E-Posta</label>
-                                <input type="text" class="form-control" placeholder="Yazara ait E-Posta adresini giriniz." name="WriterMail">
+                                @Html.TextBoxFor(x => x.WriterMail, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(x => x.WriterMail)
                             </div>
                             <div class="form-group">
                                 <label for="">Şifre</label>
-                                <input type="text" class="form-control" placeholder="Yazara ait şifreyi giriniz." name="WriterPassword">
+                                @Html.TextBoxFor(x => x.WriterPassword, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(x => x.WriterPassword)
                             </div>
                             <div class="form-group">
                                 <label for="">Yazar Görsel</label>
-                                <input type="text" class="form-control" placeholder="Yazara ait görsel uzantısını giriniz." name="WriterImage">
+                                @Html.TextBoxFor(x => x.WriterImage, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(x => x.WriterImage)
                             </div>
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-outline-primary col-md-12">Yeni Yazar Ekle!</button>
+                            <button type="submit" class="btn btn-outline-primary col-md-12">Yazarı Güncelle!</button>
                         </div>
                     </form>
                 </div>
@@ -83,4 +84,5 @@
         </div>
     </div>
 </section>
+
 
