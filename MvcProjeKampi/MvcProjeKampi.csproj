@@ -178,7 +178,7 @@
     <Content Include="AdminLTE-3.0.4\dist\img\4.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\AdminLTELogo.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\avatar.png" />
-    <Content Include="AdminLTE-3.0.4\dist\img\avatar04.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\avatar4.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\avatar2.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\avatar3.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\avatar5.png" />
@@ -193,7 +193,6 @@
     <Content Include="AdminLTE-3.0.4\dist\img\credit\visa.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\default-150x150.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\icons.png" />
-    <Content Include="AdminLTE-3.0.4\dist\img\IMG_2660.JPG" />
     <Content Include="AdminLTE-3.0.4\dist\img\photo1.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\photo2.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\photo3.jpg" />
@@ -2301,6 +2300,7 @@
     <Content Include="Views\Writer\AddWriter.cshtml" />
     <Content Include="Views\Writer\EditWriter.cshtml" />
     <Content Include="Views\Heading\Index.cshtml" />
+    <Content Include="Views\Heading\AddHeading.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

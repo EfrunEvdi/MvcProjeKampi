@@ -212,3 +212,34 @@ Bu derste yazar güncelleme sayfasını
 
 # 46 Ders (Başlık İşlemleri)
 Bu derste Başlıkları listeletme işlerini yaptık.
+
+# 47 Ders (Başlık İşlemlerinde DropDownList ve İlişki Kullanımı)
+Bu derste başlık eklerken kategorileri listelenmek için aşağıdaki kodu yazdık.
+
+[HttpGet]
+  public ActionResult AddHeading()
+  {
+      List<SelectListItem> ValueCategory = (from x in cm.GetList()
+                                            select new SelectListItem
+                                            {
+                                                Text = x.CategoryName,
+                                                Value = x.CategoryID.ToString()
+                                            }).ToList();
+      return View();
+  }
+
+# 48 Ders (Başlıklarda Oluşturulan Yazar ve Kategori İşlemleri)
+Bu derste bir önceki ders yaptığımız kodun çekme işmeini aşağıdaki kodla yaptık.
+ <label for="">Kategori</label>
+    @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.VLC, "Kategori seçiniz.", new { @class = "form-control", @required = "required" })
+    @Html.ValidationMessageFor(x => x.CategoryID)
+
+
+# 49 Ders (Başlık İşlemleri)
+Bu derste başlık kısmının templatini değiştirim düzenledik.
+
+# 50 Ders  (Başlık Düzenlemeleri)
+Bu derste başlık kısmıyla ilgilendik.
+Tarih Formatı : @(((DateTime)item.HeadingDate).ToString("dd-MMMM-yyyy")
+
+# 51 Ders (Content By Heading Sayfası)

@@ -6,6 +6,11 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+@{
+    string color = "";
+    string buttonTyp = "";
+}
+
 <section class="content">
     <div class="container-fluid">
 
@@ -13,60 +18,134 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Başlık Listesi</h1>
+                        <h1>Başlık İşlemleri</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Başlık Listesi</a></li>
+                            <li class="breadcrumb-item"><a href="/Heading/Index">Başlık İşlemleri</a></li>
                             @*<li class="breadcrumb-item active">Contacts</li>*@
                         </ol>
                     </div>
                 </div>
-            </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.container-fluid -->
         </section>
 
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Başlık Listesi</h3>
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body">
-                        <table class="table table-hover">
-                            <thead class="text-center">
-                                <tr>
-                                    <th style="width: 10px">#</th>
-                                    <th>Başlık</th>
-                                    <th>Kategori</th>
-                                    <th>İşlem Seçiniz</th>
-                                </tr>
-                            </thead>
-                            <tbody class="text-center">
-                                @foreach (var item in Model)
-                                {
-                                    <tr>
-                                        <td>@item.HeadingID</td>
-                                        <td>@item.HeadingName</td>
-                                        <td>@item.Category.CategoryName</td>
-                                        <td>
-                                            <a href="#" class="btn btn-outline-info col-md-3">Başlıklar</a>
-                                            <a href="#" class="btn btn-outline-warning col-md-3">Güncelle</a>
+        <section class="content">
+            <!-- Default box -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Başlıklar</h3>
 
-                                            <a href="#" class="btn btn-outline-danger col-md-3">Sil</a>
-                                        </td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- /.card-body -->
-                    <div class="card-footer clearfix">
-                        <a href="#" class="btn btn-outline-primary col-md-12">Yeni Başlık Ekle!</a>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                            <i class="fas fa-times"></i>
+                        </button>
                     </div>
                 </div>
+                <div class="card-body p-0">
+                    <table class="table table-striped projects text-center">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Başlık Adı</th>
+                                <th>Yazar</th>
+                                <th>Kategori</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                if (item.Category.CategoryName == "Tiyatro")
+                                {
+                                    color = "badge badge-warning";
+                                }
+                                if (item.Category.CategoryName == "Spor")
+                                {
+                                    color = "badge badge-success";
+                                }
+                                if (item.Category.CategoryName == "Yazılım")
+                                {
+                                    color = "badge badge-info";
+                                }
+                                if (item.Category.CategoryName == "Gezi")
+                                {
+                                    color = "badge badge-secondary";
+                                }
+                                if (item.Category.CategoryName == "Kitap")
+                                {
+                                    color = "badge badge-warning";
+                                }
+                                if (item.Category.CategoryName == "Film")
+                                {
+                                    color = "badge badge-dark";
+                                }
+                                if (item.Category.CategoryName == "Dizi")
+                                {
+                                    color = "badge badge-primary";
+                                }
+                                if (item.Category.CategoryName == "Sosyal Medya")
+                                {
+                                    color = "badge badge-success";
+                                }
+                                if (item.Category.CategoryName == "Donanım")
+                                {
+                                    color = "badge badge-info";
+                                }
+                                if (item.Category.CategoryName == "Network ve Güvenlik")
+                                {
+                                    color = "badge badge-dark";
+                                }
+                                if (item.Category.CategoryName == "Teknoloji")
+                                {
+                                    color = "badge badge-warning";
+                                }
+                                if (item.Category.CategoryName == "Sinema")
+                                {
+                                    color = "badge badge-secondary";
+                                }
+
+                                <tr>
+                                    <td>@item.HeadingID</td>
+                                    <td>
+                                        <a>@item.HeadingName</a>
+                                        <br />
+                                        <small class="text-success">@(((DateTime)item.HeadingDate).ToString("dd-MMMM-yyyy"))</small>
+                                    </td>
+                                    <td>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <img alt="Avatar" class="table-avatar" src="@item.Writer.WriterImage">
+                                                <small>@item.Writer.WriterName @item.Writer.WriterSurname</small>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td class="project-state">
+                                        <span class="@color">@item.Category.CategoryName</span>
+                                    </td>
+                                    <td class="project-actions">
+                                        <a class="btn btn-primary btn-sm" href="#">
+                                            <i class="fas fa-folder"> İçerik</i>
+                                        </a>
+                                        <a class="btn btn-info btn-sm" href="#">
+                                            <i class="fas fa-pencil-alt"> Düzenle</i>
+                                        </a>
+                                        <a class="btn btn-danger btn-sm" href="#">
+                                            <i class="fas fa-trash"> Sil</i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
             </div>
-        </div>
+            <!-- /.card -->
+        </section>
     </div>
 </section>
-
