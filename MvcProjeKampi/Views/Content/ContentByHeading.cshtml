@@ -1,0 +1,66 @@
+﻿﻿@using EntityLayer.Concrete
+@model List<Content>
+
+@{
+    ViewBag.Title = "ContentByHeading";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Profile</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">User Profile</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <div class="wrapper">
+            <section class="content">
+                <div class="container-fluid">
+                    <!-- Timelime example  -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- The time line -->
+                            <div class="timeline">
+                                @foreach (var item in Model)
+                                {
+                                    <!-- timeline time label -->
+                                    <div class="time-label">
+                                        <span class="bg-success">@(((DateTime) item.ContentDate).ToString("dd-MMM-yyyy"))</span>
+                                    </div>
+                                    <!-- /.timeline-label -->
+                                    <!-- timeline item -->
+                                    <div>
+                                        <i class="fas fa-comment bg-yellow"></i>
+                                        <div class="timeline-item">
+                                            <h3 class="timeline-header"><a href="#">@item.Writer.WriterName @item.Writer.WriterSurname</a></h3>
+                                            <div class="timeline-body">
+                                                @item.ContentValue
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- END timeline item -->
+                                }
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </div>
+                <!-- /.timeline -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- ./wrapper -->
+    </div>
+</section>

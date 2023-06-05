@@ -243,3 +243,7 @@ Bu derste başlık kısmıyla ilgilendik.
 Tarih Formatı : @(((DateTime)item.HeadingDate).ToString("dd-MMMM-yyyy")
 
 # 51 Ders (Content By Heading Sayfası)
+Bu derste yara ait yazıların gösterileceği sayfayı yaptık.
+
+# 52 Ders (Content Controller)
+Bu derste Heading controllerdaki kısmı kesip ContentControllera koyduk ve content controller'a ait Business katmanındaki eksikleri tamamladık.

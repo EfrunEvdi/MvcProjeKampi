@@ -84,6 +84,10 @@
     <Compile Include="Migrations\202306021600027_imagelength.designer.cs">
       <DependentUpon>202306021600027_imagelength.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202306051752137_mig_writerstatus.cs" />
+    <Compile Include="Migrations\202306051752137_mig_writerstatus.designer.cs">
+      <DependentUpon>202306051752137_mig_writerstatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -109,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202306021600027_imagelength.resx">
       <DependentUpon>202306021600027_imagelength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306051752137_mig_writerstatus.resx">
+      <DependentUpon>202306051752137_mig_writerstatus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
