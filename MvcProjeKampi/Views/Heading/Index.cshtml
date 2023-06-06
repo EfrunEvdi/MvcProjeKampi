@@ -4,11 +4,7 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
-
-@{
     string color = "";
-    string buttonTyp = "";
 }
 
 <section class="content">
@@ -131,7 +127,7 @@
                                         <a class="btn btn-primary btn-sm" href="/Content/ContentByHeading/@item.HeadingID">
                                             <i class="fas fa-folder"> İçerik</i>
                                         </a>
-                                        <a class="btn btn-info btn-sm" href="#">
+                                        <a class="btn btn-info btn-sm" href="/Heading/EditHeading/@item.HeadingID">
                                             <i class="fas fa-pencil-alt"> Düzenle</i>
                                         </a>
                                         <a class="btn btn-danger btn-sm" href="#">

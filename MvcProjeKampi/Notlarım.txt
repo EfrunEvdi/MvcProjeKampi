@@ -247,3 +247,9 @@ Bu derste yara ait yazıların gösterileceği sayfayı yaptık.
 
 # 52 Ders (Content Controller)
 Bu derste Heading controllerdaki kısmı kesip ContentControllera koyduk ve content controller'a ait Business katmanındaki eksikleri tamamladık.
+
+# 53 Ders (Başlıkları Göre İçeriklerin Listelenmesi)
+Bu derste bir önceki ders yarım kalan BaşlıkId'ye göre içerikleri getirme kısmını tamamladık.
+
+# 54 Ders (Başlık İşlemleri Detayları) 
+Bu derste başlık düzenleme için gerekli işlemleri yaptık ve bir kaç görsel iyileştirme yaptım.

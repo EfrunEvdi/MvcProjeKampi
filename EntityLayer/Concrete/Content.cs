@@ -12,10 +12,11 @@ namespace EntityLayer.Concrete
         [Key]
         public int ContentID { get; set; }
 
-        [StringLength(100)]
+        [StringLength(1000)]
         public string ContentValue { get; set; }
 
         public DateTime ContentDate { get; set; }
+        public bool ContentStatus { get; set; }
 
         public int HeadingID { get; set; }
         public virtual Heading Heading { get; set; }
