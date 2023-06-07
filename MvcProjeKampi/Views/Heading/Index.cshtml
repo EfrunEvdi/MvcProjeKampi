@@ -130,9 +130,19 @@
                                         <a class="btn btn-info btn-sm" href="/Heading/EditHeading/@item.HeadingID">
                                             <i class="fas fa-pencil-alt"> Düzenle</i>
                                         </a>
-                                        <a class="btn btn-danger btn-sm" href="#">
-                                            <i class="fas fa-trash"> Sil</i>
-                                        </a>
+                                        @if (item.HeadingStatus == true)
+                                        {
+                                            <a class="btn btn-danger btn-sm" href="/Heading/DeleteHeading/@item.HeadingID">
+                                                <i class="fas fa-caret-square-down"> Pasif Yap</i>
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a class="btn btn-success btn-sm" href="/Heading/DeleteHeading/@item.HeadingID">
+                                                <i class="fas fa-caret-square-up"> Aktif Yap</i>
+                                            </a>
+                                        }
+
                                     </td>
                                 </tr>
                             }

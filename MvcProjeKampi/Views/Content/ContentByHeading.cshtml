@@ -45,6 +45,7 @@
                                     <div class="timeline timeline-inverse">
                                         @foreach (var item in Model)
                                         {
+
                                             <!-- timeline time label -->
                                             <div class="time-label">
                                                 <span class="bg-gradient-@rastgeleDeger">@(((DateTime) item.ContentDate).ToString("dd-MMMM-yyyy"))</span>
@@ -53,8 +54,10 @@
                                             <!-- timeline item -->
                                             <div>
                                                 <i class="fas fa-comment bg-gradient-@rastgeleDeger1"></i>
+
+
                                                 <div class="timeline-item">
-                                                    <h3 class="timeline-header"><a href="#" class="text-dark">@item.Writer.WriterName @item.Writer.WriterSurname</a></h3>
+                                                    <h3 class="timeline-header"><a href="#" class="text-dark"> <img alt="Avatar" style="width:40px" src="@item.Writer.WriterImage"> @item.Writer.WriterName @item.Writer.WriterSurname</a></h3>
                                                     <div class="timeline-body">
                                                         @item.ContentValue
                                                     </div>

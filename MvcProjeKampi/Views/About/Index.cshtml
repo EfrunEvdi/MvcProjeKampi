@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<button class="btn btn-outline-primary" data-toggle="modal" data-target="#Modal1">
+    Yeni Hakkımızda Yazısı Girişi
+</button>
+
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title text-info">Hakkımızda Metin Girişi</h2>
+            </div>
+            <form action="#" method="post">
+                <div class="modal-body">
+                    <div class="row mb-3">
+                        <label class="mb-1">Hakkımda Metin 1 :</label>
+                        <input type="text" name="#" class="form-control" />
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="mb-1">Hakkımda Metin 2 :</label>
+                        <input type="text" name="#" class="form-control" />
+                    </div>
+                    <div class="row mb-3">
+                        <label class="mb-1">Hakkımda Görsel 1 :</label>
+                        <input type="text" name="#" class="form-control" />
+                    </div>
+                    <div class="row mb-3">
+                        <label class="mb-1">Hakkımda Görsel 2 :</label>
+                        <input type="text" name="#" class="form-control" />
+                    </div>
+                    <button class="btn btn-outline-info col-12">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

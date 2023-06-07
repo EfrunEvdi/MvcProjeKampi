@@ -253,3 +253,9 @@ Bu derste bir önceki ders yarım kalan BaşlıkId'ye göre içerikleri getirme 
 
 # 54 Ders (Başlık İşlemleri Detayları) 
 Bu derste başlık düzenleme için gerekli işlemleri yaptık ve bir kaç görsel iyileştirme yaptım.
+
+# 55 Ders (Başlıkların Silinmesi)
+Bu derste heading ügncelleme ve silme (t->f, f->t) işlemlerini yaptık.
+
+# 56 Ders (Popup Kullanımı)
+Bu derste popup kavramına giriş yaptık.
