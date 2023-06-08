@@ -259,3 +259,9 @@ Bu derste heading ügncelleme ve silme (t->f, f->t) işlemlerini yaptık.
 
 # 56 Ders (Popup Kullanımı)
 Bu derste popup kavramına giriş yaptık.
+
+# 57 Ders (Hakkımızda Sayfası)
+Bu derste About/Index'e hakkımda yazılarını listelettik.
+
+# 58 Ders (Gelen Kutusu Safya Hazırlığı)
+Bu derste Mail kutusunu template imize uydurduk.

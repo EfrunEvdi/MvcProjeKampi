@@ -1,41 +1,77 @@
-﻿
+﻿@using EntityLayer.Concrete
+@model List<About>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<button class="btn btn-outline-primary" data-toggle="modal" data-target="#Modal1">
-    Yeni Hakkımızda Yazısı Girişi
-</button>
+<section class="content">
+    <div class="container-fluid">
 
-<div class="modal" id="Modal1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title text-info">Hakkımızda Metin Girişi</h2>
-            </div>
-            <form action="#" method="post">
-                <div class="modal-body">
-                    <div class="row mb-3">
-                        <label class="mb-1">Hakkımda Metin 1 :</label>
-                        <input type="text" name="#" class="form-control" />
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Başlık Listesi</h1>
                     </div>
-
-                    <div class="row mb-3">
-                        <label class="mb-1">Hakkımda Metin 2 :</label>
-                        <input type="text" name="#" class="form-control" />
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/About/Index">Başlık Listesi</a></li>
+                            @*<li class="breadcrumb-item active">Contacts</li>*@
+                        </ol>
                     </div>
-                    <div class="row mb-3">
-                        <label class="mb-1">Hakkımda Görsel 1 :</label>
-                        <input type="text" name="#" class="form-control" />
-                    </div>
-                    <div class="row mb-3">
-                        <label class="mb-1">Hakkımda Görsel 2 :</label>
-                        <input type="text" name="#" class="form-control" />
-                    </div>
-                    <button class="btn btn-outline-info col-12">Kaydet</button>
                 </div>
-            </form>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Başlık Listesi</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead class="text-center">
+                                <tr>
+                                    <th style="width: 10px">#</th>
+                                    <th>Hakkımda Başlığı</th>
+                                    <th>İşlem Seçiniz</th>
+                                    <th>Durum</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.AboutID</td>
+                                        <td>@item.AboutDetails1</td>
+                                        <td>
+                                            <a href="#" class="btn btn-outline-info col-md-3">Başlıklar</a>
+                                            <a href="/About/UpdateAbout/@item.AboutID" class="btn btn-outline-warning col-md-3">Güncelle</a>
+
+                                            <a href="/About/DeleteAbout/@item.AboutID" class="btn btn-outline-danger col-md-3">Sil</a>
+                                        </td>
+
+                                        @*@if (item.CategoryStatus == true)
+                                            {
+                                                <td><span class="badge bg-info">Aktif</span></td>
+                                            }
+                                            else
+                                            {
+                                                <td><span class="badge bg-danger">Pasif</span></td>
+                                            }*@
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                    @Html.Action("AboutPartial", "About")
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>
