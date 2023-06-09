@@ -265,3 +265,9 @@ Bu derste About/Index'e hakkımda yazılarını listelettik.
 
 # 58 Ders (Gelen Kutusu Safya Hazırlığı)
 Bu derste Mail kutusunu template imize uydurduk.
+
+# 59 Ders (Mesajların Listelenmesi)
+Bu derste Contact entitysine ait business ve Data access layerdaki eklemeleri yapıp Contact/Index'te Mesajları listelettik.
+
+# 60 Ders (Mesaj Detayları)
+Bu derste mesaj detayları sayfasını oluşturup idye göre değer çektik.

@@ -1,7 +1,7 @@
-﻿@using EntityLayer.Concrete
-@model List<Contact>
+﻿@model EntityLayer.Concrete.Contact
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "GetContactDetails";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -111,97 +111,64 @@
                 <div class="col-md-9">
                     <div class="card card-primary card-outline">
                         <div class="card-header">
-                            <h3 class="card-title">Gelen Kutusu</h3>
+                            <h3 class="card-title">E-Posta Detayı</h3>
 
                             <div class="card-tools">
-                                <div class="input-group input-group-sm">
-                                    <input type="text" class="form-control" placeholder="Mail ara...">
-                                    <div class="input-group-append">
-                                        <div class="btn btn-primary">
-                                            <i class="fas fa-search"></i>
-                                        </div>
-                                    </div>
-                                </div>
+                                <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Previous"><i class="fas fa-chevron-left"></i></a>
+                                <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Next"><i class="fas fa-chevron-right"></i></a>
                             </div>
-                            <!-- /.card-tools -->
                         </div>
                         <!-- /.card-header -->
+                        @Html.HiddenFor(x => x.ContactID)
                         <div class="card-body p-0">
-                            <div class="mailbox-controls">
-                                <!-- Check all button -->
-                                <button type="button" class="btn btn-default btn-sm checkbox-toggle">
-                                    <i class="far fa-square"></i>
-                                </button>
+                            <div class="mailbox-read-info">
+                                <h5>@Model.Subject</h5>
+                                <h6>
+                                    @Model.UserMail
+                                    <span class="mailbox-read-time float-right">15 Feb. 2015 11:03 PM</span>
+                                </h6>
+                            </div>
+                            <!-- /.mailbox-read-info -->
+                            <div class="mailbox-controls with-border text-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
-                                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-reply"></i></button>
-                                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-share"></i></button>
+                                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Sil">
+                                        <i class="far fa-trash-alt"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Cevapla">
+                                        <i class="fas fa-reply"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Yönlendir">
+                                        <i class="fas fa-share"></i>
+                                    </button>
                                 </div>
                                 <!-- /.btn-group -->
-                                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
-                                <div class="float-right">
-                                    1-50/200
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-left"></i></button>
-                                        <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-right"></i></button>
-                                    </div>
-                                    <!-- /.btn-group -->
-                                </div>
-                                <!-- /.float-right -->
+                                <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Yazdır">
+                                    <i class="fas fa-print"></i>
+                                </button>
                             </div>
-                            <div class="table-responsive mailbox-messages">
-                                <table class="table table-hover table-striped">
-                                    <tbody>
-                                        @foreach (var item in Model)
-                                        {
-                                            <tr>
-                                                <td>
-                                                    <div class="icheck-primary">
-                                                        <input type="checkbox" value="" id="check1">
-                                                        <label for="check1"></label>
-                                                    </div>
-                                                </td>
-                                                <td class="mailbox-star"><a href="/Contact/GetContactDetails/@item.ContactID"><i class="fas fa-star text-warning"></i></a></td>
-                                                <td class="/Contact/GetContactDetails/@item.ContactID"><a href="read-mail.html">@item.UserName</a></td>
-                                                <td class="mailbox-subject">
-                                                    <b>@item.Subject</b> - @item.Message.Substring(0, 30)...
-                                                </td>
-                                                <td class="mailbox-attachment"></td>
-                                                <td class="mailbox-date">5 mins ago</td>
-                                            </tr>
-                                        }
+                            <!-- /.mailbox-controls -->
+                            <div class="mailbox-read-message">
+                                @*<p>Hello John,</p>*@
 
-                                    </tbody>
-                                </table>
-                                <!-- /.table -->
+                                <p>
+                                    @Model.Message
+                                </p>
+
+                                <br>
                             </div>
-                            <!-- /.mail-box-messages -->
+                            <!-- /.mailbox-read-message -->
                         </div>
                         <!-- /.card-body -->
-                        <div class="card-footer p-0">
-                            <div class="mailbox-controls">
-                                <!-- Check all button -->
-                                <button type="button" class="btn btn-default btn-sm checkbox-toggle">
-                                    <i class="far fa-square"></i>
-                                </button>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
-                                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-reply"></i></button>
-                                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-share"></i></button>
-                                </div>
-                                <!-- /.btn-group -->
-                                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
-                                <div class="float-right">
-                                    1-50/200
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-left"></i></button>
-                                        <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-right"></i></button>
-                                    </div>
-                                    <!-- /.btn-group -->
-                                </div>
-                                <!-- /.float-right -->
+                        <!-- /.card-footer -->
+                        <div class="card-footer">
+                            <div class="float-right">
+                                <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Cevapla</button>
+                                <button type="button" class="btn btn-default"><i class="fas fa-share"></i> Yönlendir</button>
                             </div>
+                            <button type="button" class="btn btn-default"><i class="far fa-trash-alt"></i> Sil</button>
+                            <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Yazdır</button>
                         </div>
+                        <!-- /.card-footer -->
                     </div>
                     <!-- /.card -->
                 </div>
@@ -212,3 +179,4 @@
         <!-- /.content -->
     </div>
 </section>
+
