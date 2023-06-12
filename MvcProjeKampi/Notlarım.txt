@@ -271,3 +271,9 @@ Bu derste Contact entitysine ait business ve Data access layerdaki eklemeleri ya
 
 # 60 Ders (Mesaj Detayları)
 Bu derste mesaj detayları sayfasını oluşturup idye göre değer çektik.
+
+# 61 Ders (Mesaj Sınıfı)
+Bu derste projeye Message sınıfını dahil edip MessagListMenu partialını oluşturduk.
+
+# 62 Ders (Mesaj Controller ve Admine Gelen Mesajlar)
+Bu derste mesaj sınıfına ait DAL ve BL class ve entitylerini ekleyip alıcısı admin@gmail.com olan mesajları Inbox'ta listelettik.

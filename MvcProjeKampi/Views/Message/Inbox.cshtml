@@ -1,7 +1,8 @@
 ﻿@using EntityLayer.Concrete
-@model List<Contact>
+@model List<Message>
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Inbox";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -12,12 +13,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Mesajlar</h1>
+                        <h1>Gelen Kutusu</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Ana Sayfa</a></li>
-                            <li class="breadcrumb-item active">Mesajlar</li>
+                            <li class="breadcrumb-item active">Gelen Kutusu</li>
                         </ol>
                     </div>
                 </div>
@@ -82,10 +83,10 @@
                                                         <label for="check1"></label>
                                                     </div>
                                                 </td>
-                                                <td class="mailbox-star"><a href="/Contact/GetContactDetails/@item.ContactID"><i class="fas fa-star text-warning"></i></a></td>
-                                                <td class="/Contact/GetContactDetails/@item.ContactID"><a href="read-mail.html">@item.UserName</a></td>
+                                                <td class="mailbox-star"><a href="/Contact/GetContactDetails/@item.MessageID"><i class="fas fa-star text-warning"></i></a></td>
+                                                <td class="/Contact/GetContactDetails/@item.MessageID"><a href="read-mail.html">@item.SenderMail</a></td>
                                                 <td class="mailbox-subject">
-                                                    <b>@item.Subject</b> - @item.Message.Substring(0, 30)...
+                                                    <b>@item.Subject</b> - @item.MessageContent.Substring(0, 30)...
                                                 </td>
                                                 <td class="mailbox-attachment"></td>
                                                 <td class="mailbox-date">5 mins ago</td>
@@ -133,3 +134,4 @@
         <!-- /.content -->
     </div>
 </section>
+
