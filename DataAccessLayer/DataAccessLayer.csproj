@@ -102,6 +102,14 @@
     <Compile Include="Migrations\202306121247241_mig_add_message_class.designer.cs">
       <DependentUpon>202306121247241_mig_add_message_class.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202306131920512_mig_fix.cs" />
+    <Compile Include="Migrations\202306131920512_mig_fix.designer.cs">
+      <DependentUpon>202306131920512_mig_fix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306131923330_mig_message_addcolumn.cs" />
+    <Compile Include="Migrations\202306131923330_mig_message_addcolumn.designer.cs">
+      <DependentUpon>202306131923330_mig_message_addcolumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -139,6 +147,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202306121247241_mig_add_message_class.resx">
       <DependentUpon>202306121247241_mig_add_message_class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306131920512_mig_fix.resx">
+      <DependentUpon>202306131920512_mig_fix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306131923330_mig_message_addcolumn.resx">
+      <DependentUpon>202306131923330_mig_message_addcolumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

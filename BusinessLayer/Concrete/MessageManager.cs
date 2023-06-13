@@ -18,14 +18,32 @@ namespace BusinessLayer.Concrete
             _messageDal = messageDal;
         }
 
+        public void BoolValue(Message message)
+        {
+            if (message.MessageIsDraft == true)
+            {
+                message.MessageIsDraft = false;
+            }
+            else
+            {
+                message.MessageIsDraft = true;
+            }
+            _messageDal.Insert(message);
+        }
+
         public Message GetByID(int id)
         {
             return _messageDal.Get(x => x.MessageID == id);
         }
 
-        public List<Message> GetList()
+        public List<Message> GetListInbox()
         {
             return _messageDal.List(x => x.ReceiverMail == "admin@gmail.com");
+        }
+
+        public List<Message> GetListSendbox()
+        {
+            return _messageDal.List(x => x.SenderMail == "admin@gmail.com");
         }
 
         public void MessageAdd(Message message)

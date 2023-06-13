@@ -277,3 +277,11 @@ Bu derste projeye Message sınıfını dahil edip MessagListMenu partialını ol
 
 # 62 Ders (Mesaj Controller ve Admine Gelen Mesajlar)
 Bu derste mesaj sınıfına ait DAL ve BL class ve entitylerini ekleyip alıcısı admin@gmail.com olan mesajları Inbox'ta listelettik.
+
+# 63 Ders (Yeni Mesaj Sayfası)
+Bu derste Sendbox ve Inbox'u tamamlayıp NewMessage sayfasını template'e uydurduk.
+
+# 64 Ders (Yeni Mesajlarda Son Düzenlemeler)
+New Message düzenlemelerini yaptık.
+Ödev1 : Taslaklar kısmı
+Ödev2 : Mesajlar ayarlanıldığı gibi görülcek.
