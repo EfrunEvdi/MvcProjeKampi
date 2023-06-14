@@ -110,6 +110,10 @@
     <Compile Include="Migrations\202306131923330_mig_message_addcolumn.designer.cs">
       <DependentUpon>202306131923330_mig_message_addcolumn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202306141641284_mig_add_date.cs" />
+    <Compile Include="Migrations\202306141641284_mig_add_date.designer.cs">
+      <DependentUpon>202306141641284_mig_add_date.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -153,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202306131923330_mig_message_addcolumn.resx">
       <DependentUpon>202306131923330_mig_message_addcolumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306141641284_mig_add_date.resx">
+      <DependentUpon>202306141641284_mig_add_date.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

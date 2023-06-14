@@ -285,3 +285,9 @@ Bu derste Sendbox ve Inbox'u tamamlayıp NewMessage sayfasını template'e uydur
 New Message düzenlemelerini yaptık.
 Ödev1 : Taslaklar kısmı
 Ödev2 : Mesajlar ayarlanıldığı gibi görülcek.
+
+# 65 Ders (Mesaj Sayfası Revizeleri)
+Bu derste Contact ve Message karışmıtı onları düzelttik.
+
+# 66 Ders (Mesaj İşlemlerinin Tanımlanması)
+Bu derste mesaj işlemleri urlleri vs düzeltildi. Çöp Kutsu ve Taslak kısmı yapılacak.
