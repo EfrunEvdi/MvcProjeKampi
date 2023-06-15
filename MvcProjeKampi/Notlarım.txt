@@ -291,3 +291,25 @@ Bu derste Contact ve Message karışmıtı onları düzelttik.
 
 # 66 Ders (Mesaj İşlemlerinin Tanımlanması)
 Bu derste mesaj işlemleri urlleri vs düzeltildi. Çöp Kutsu ve Taslak kısmı yapılacak.
+
+# 67 Ders 404 Sayfası
+Bu derste 404 için  ErrorPageController'a
+
+public ActionResult Page404()
+        {
+            Response.StatusCode = 403;
+            Response.TrySkipIisCustomErrors = true;
+            return View();
+        }
+
+ve Web.configte
+
+system.wen içine 
+<customErrors mode="On">
+		  <error statusCode="404" redirect="/ErrorPage/Page404"/>
+	  </customErrors>
+
+yazarak istediğimiz templatei getirdik.
+
+# 68 Ders (Galeri Oluşturma)
+Bu derste ImageFile adlı classı oluşturup bu classa ait bs ve dal da gerekli dosyaları açıp içlerini doldurduktan sonra galericontroller ve bun ait indexi açıp verileri listelettik.
