@@ -139,6 +139,7 @@
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HeadingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\StatisticController.cs" />
     <Compile Include="Controllers\TestController.cs" />
@@ -401,6 +402,11 @@
     <Content Include="AdminLTE-3.0.4\index.html" />
     <Content Include="AdminLTE-3.0.4\index2.html" />
     <Content Include="AdminLTE-3.0.4\index3.html" />
+    <Content Include="AdminLTE-3.0.4\login-form\dist\index.html" />
+    <Content Include="AdminLTE-3.0.4\login-form\dist\style.css" />
+    <Content Include="AdminLTE-3.0.4\login-form\LICENSE.txt" />
+    <Content Include="AdminLTE-3.0.4\login-form\src\index.html" />
+    <Content Include="AdminLTE-3.0.4\login-form\src\style.css" />
     <Content Include="AdminLTE-3.0.4\pages\calendar.html" />
     <Content Include="AdminLTE-3.0.4\pages\charts\chartjs.html" />
     <Content Include="AdminLTE-3.0.4\pages\charts\flot.html" />
@@ -2364,6 +2370,7 @@
     <Content Include="AdminLTE-3.0.4\Html" />
     <Content Include="AdminLTE-3.0.4\code-theme-404-page\README.md" />
     <Content Include="AdminLTE-3.0.4\code-theme-404-page\src\style.scss" />
+    <Content Include="AdminLTE-3.0.4\login-form\README.md" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2422,6 +2429,8 @@
     <Content Include="Views\Message\GetSendboxMessageDetails.cshtml" />
     <Content Include="Views\ErrorPage\Page404.cshtml" />
     <Content Include="Views\Gallery\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\ErrorPage\Page401.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

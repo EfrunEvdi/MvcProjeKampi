@@ -313,3 +313,9 @@ yazarak istediğimiz templatei getirdik.
 
 # 68 Ders (Galeri Oluşturma)
 Bu derste ImageFile adlı classı oluşturup bu classa ait bs ve dal da gerekli dosyaları açıp içlerini doldurduktan sonra galericontroller ve bun ait indexi açıp verileri listelettik.
+
+# 69 Ders (Login Teması)
+Bu derste login temasını hazırladık.
+
+# 70 Ders (Admin Login İşlemi)
+Bu derste oluşturduğumuz admin tablosu ile giriş işlemi yaptırdık.
