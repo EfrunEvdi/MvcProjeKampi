@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace MvcProjeKampi.Controllers
 {
@@ -24,6 +25,8 @@ namespace MvcProjeKampi.Controllers
 
             if (adminuserinfo != null)
             {
+                FormsAuthentication.SetAuthCookie(adminuserinfo.UserName, false);
+                Session["UserName"] = adminuserinfo.UserName;
                 return RedirectToAction("Index", "AdminCategory");
             }
 

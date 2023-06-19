@@ -319,3 +319,56 @@ Bu derste login temasını hazırladık.
 
 # 70 Ders (Admin Login İşlemi)
 Bu derste oluşturduğumuz admin tablosu ile giriş işlemi yaptırdık.
+
+# 71 Ders (Authentication Ve Session)
+Bu derste hata almamak adına Web Config'te
+
+<authentication mode="Forms">
+	<forms loginUrl="/Login/Index"></forms>
+</authentication>
+
+ayrıca giriş yaptığımızı cerezlere kaydetmek için
+
+FormsAuthentication.SetAuthCookie(adminuserinfo.UserName, false);
+Session["UserName"] = adminuserinfo.UserName;
+
+kodlarını yazdık.
+
+# 72 Ders (Rolleme & Sertifika Görevi 3/4)
+Bu derste
+
+MvcProjeKampi.Roles/AdminRoleProvider sınıfı ve
+
+<roleManager enabled="true" defaultProvider="TestRoleProvider">
+  <providers>
+	  <add name="TestRoleProvider" type="MvcProjeKampi.Roles.AdminRoleProvider"/>
+  </providers>
+</roleManager>
+
+rolü aktif ettik.
+
+ @if (User.IsInRole("A"))
+{
+    <li class="nav-item has-treeview">
+        <a href="/AdminCategory/Index" class="nav-link">
+            <i class="nav-icon fas fa-clipboard"></i>
+            <p>
+                Kategoriler
+            </p>
+        </a>
+    </li>
+}
+
+ile giriş yapmış kullanıcının rolüne göre istediğimiz kısmı gösterdik.
+
+[Authorize(Roles = "B")] => ile istediğimiz role o kontrollera girme yetkisi verdik.
+
+3/4 Görevi
+-----------
+1) Gelen kutusunda okundu okunmadı seçeneği
+2) Okunmamış mesaj sayısı
+3) Aktif - Pasif yap (Hakkımızda)
+4) Admin bilgileri hashleme
+5) Oturum açma işlemini mimariye taşıma
+6) Rolleme işlemini mimariye taşıma
+7) Size ait bir yetenek kartı sayfası (UI/SS)
