@@ -372,3 +372,7 @@ ile giriş yapmış kullanıcının rolüne göre istediğimiz kısmı gösterdi
 5) Oturum açma işlemini mimariye taşıma
 6) Rolleme işlemini mimariye taşıma
 7) Size ait bir yetenek kartı sayfası (UI/SS)
+
+# 73 Ders (Yazar Layout)
+
+# 74 Ders ()

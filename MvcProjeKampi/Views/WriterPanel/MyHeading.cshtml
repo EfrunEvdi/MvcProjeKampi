@@ -1,0 +1,112 @@
+﻿@using EntityLayer.Concrete
+@model List<Heading>
+
+@{
+    ViewBag.Title = "MyHeading";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+
+}
+
+<section class="content">
+    <div class="container-fluid">
+
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Başlık İşlemleri</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/Heading/Index">Başlık İşlemleri</a></li>
+                            @*<li class="breadcrumb-item active">Contacts</li>*@
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+        </section>
+
+        <section class="content">
+            <!-- Default box -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Başlıklar</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-striped projects text-center">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Başlık Adı</th>
+                                <th>Yazar</th>
+                                <th>Kategori</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.HeadingID</td>
+                                    <td>
+                                        <a>@item.HeadingName</a>
+                                        <br />
+                                        <small class="text-success">@(((DateTime)item.HeadingDate).ToString("dd-MMMM-yyyy"))</small>
+                                    </td>
+                                    <td>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <img alt="Avatar" class="table-avatar" src="@item.Writer.WriterImage">
+                                                <small>@item.Writer.WriterName @item.Writer.WriterSurname</small>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td class="project-state">
+                                        <span class="badge badge-success">@item.Category.CategoryName</span>
+                                    </td>
+                                    <td class="project-actions">
+                                        <a class="btn btn-primary btn-sm" href="/Content/ContentByHeading/@item.HeadingID">
+                                            <i class="fas fa-folder"> İçerik</i>
+                                        </a>
+                                        <a class="btn btn-info btn-sm" href="/WriterPanel/EditHeading/@item.HeadingID">
+                                            <i class="fas fa-pencil-alt"> Düzenle</i>
+                                        </a>
+                                        @if (item.HeadingStatus == true)
+                                        {
+                                            <a class="btn btn-danger btn-sm" href="/Heading/DeleteHeading/@item.HeadingID">
+                                                <i class="fas fa-caret-square-down"> Pasif Yap</i>
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a class="btn btn-success btn-sm" href="/Heading/DeleteHeading/@item.HeadingID">
+                                                <i class="fas fa-caret-square-up"> Aktif Yap</i>
+                                            </a>
+                                        }
+
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <div class="card-footer clearfix">
+                        <a href="/WriterPanel/NewHeading/" class="btn btn-outline-primary col-md-12">Yeni Başlık Ekle!</a>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </section>
+    </div>
+</section>
+
