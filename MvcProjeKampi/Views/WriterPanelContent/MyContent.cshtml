@@ -1,0 +1,97 @@
+﻿﻿@using EntityLayer.Concrete
+@model List<Content>
+
+@{
+    ViewBag.Title = "MyContent";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+
+    string[] renkler = { "blue", "cyan", "danger", "dark", "fuchsia", "gray", "gray-dark", "green", "indigo", "info", "light", "lightblue", "lime", "maroon", "navy", "olive", "orange", "pink", "primary", "purple", "red", "secondary", "success", "teal", "warning", "white", "yellow" };
+
+    Random random = new Random();
+    int rastgeleIndis = random.Next(0, renkler.Length);
+    int rastgeleIndis1 = random.Next(0, renkler.Length);
+    string rastgeleDeger = renkler[rastgeleIndis];
+    string rastgeleDeger1 = renkler[rastgeleIndis1];
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <div class="timeline-item">
+                            <h3 class="timeline-header"><a href="#" class="text-dark"> <img alt="Avatar" style="width:70px" src="@ViewBag.PP"> @ViewBag.UN</a></h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/Heading/Index">İçerik İşlemleri</a></li>
+                            <li class="breadcrumb-item active">İçeriklerim</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <div class="wrapper">
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <!-- Timelime example  -->
+                                    <!-- The time line -->
+                                    <div class="timeline timeline-inverse">
+                                        @foreach (var item in Model)
+                                        {
+
+                                            <!-- timeline time label -->
+                                            <div class="time-label">
+                                                <span class="bg-gradient-@rastgeleDeger">@(((DateTime) item.ContentDate).ToString("dd-MMMM-yyyy"))</span>
+                                            </div>
+                                            <!-- /.timeline-label -->
+                                            <!-- timeline item -->
+                                            <div>
+                                                <i class="fas fa-comment bg-gradient-@rastgeleDeger1"></i>
+
+
+                                                <div class="timeline-item">
+                                                    <h3 class="timeline-header"> <b> @item.Heading.HeadingName</b></h3>
+                                                    <div class="timeline-body">
+                                                        @item.ContentValue
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- END timeline item -->
+                                        }
+
+                                        @if (ViewBag.Sayi == 0)
+                                        {
+                                            <div>
+                                                <i class="fas fa-info bg-gradient-red"></i>
+                                                <div class="timeline-item">
+                                                    <h3 class="timeline-header"><a href="#" class="text-dark">Bu başlığa henüz bir içerik yazılmamış.</a></h3>
+                                                    <div class="timeline-body">
+                                                        Dilerseniz ilk içeriği siz yazabilir veya başlığı silebilirsiniz.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                        <!-- /.col -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.timeline -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- ./wrapper -->
+    </div>
+</section>
+

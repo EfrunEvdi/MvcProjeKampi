@@ -374,5 +374,13 @@ ile giriş yapmış kullanıcının rolüne göre istediğimiz kısmı gösterdi
 7) Size ait bir yetenek kartı sayfası (UI/SS)
 
 # 73 Ders (Yazar Layout)
+Bu derste admin layoutu writer layout olarak yeni bir view olarak açtık ardından sidebarı bu duruma göre güncelledik.
 
-# 74 Ders ()
+# 74 Ders (Yazar Başlık İşlemleri)
+Bu derste yazara ait başlıkları getirme ekleme ve güncelleme işlemlerini yaptık.
+
+# 75 Ders (Yazar Mesaj İşlemleri)
+Bu derste yazara ait gelen ve giden mesajlar için viewleri ayarladık.
+
+# 76 Ders (Yazarın Yazdığı Yazılar)
+Bu derste yazarın tüm yazılarının listelendiği viewi ayarladık.
