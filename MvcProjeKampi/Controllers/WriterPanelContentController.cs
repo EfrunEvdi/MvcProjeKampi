@@ -13,11 +13,15 @@ namespace MvcProjeKampi.Controllers
     {
         ContentManager cm = new ContentManager(new EfContentDal());
         Context context = new Context();
-        public ActionResult MyContent()
+        public ActionResult MyContent(string p)
         {
-            var ContentValues = cm.GetListByWriter();
-            ViewBag.UN = context.Writers.Where(x => x.WriterID == 4).Select(y => y.WriterName + " " + y.WriterSurname).FirstOrDefault();
-            ViewBag.PP = context.Writers.Where(x => x.WriterID == 4).Select(y => y.WriterImage).FirstOrDefault();
+            p = (string)Session["WriterMail"];
+            var WriterIDInfo = context.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
+
+            var ContentValues = cm.GetListByWriter(WriterIDInfo);
+            ViewBag.UN = context.Writers.Where(x => x.WriterID == WriterIDInfo).Select(y => y.WriterName + " " + y.WriterSurname).FirstOrDefault();
+            ViewBag.PP = context.Writers.Where(x => x.WriterID == WriterIDInfo).Select(y => y.WriterImage).FirstOrDefault();
+
             return View(ContentValues);
         }
     }

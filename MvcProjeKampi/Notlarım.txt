@@ -384,3 +384,10 @@ Bu derste yazara ait gelen ve giden mesajlar için viewleri ayarladık.
 
 # 76 Ders (Yazarın Yazdığı Yazılar)
 Bu derste yazarın tüm yazılarının listelendiği viewi ayarladık.
+
+# 77 Ders (Writer Login)
+Ödev: Yazar girişine ben robot değilim.
+Bu derste yazar giriş panelini ve girişini yaptık.
+
+# 78 Ders (Session İle Bilgileri Taşıma)
+Bu derste giriş yapmış kullanıcının ıd sine göre yazılarını getirdik.

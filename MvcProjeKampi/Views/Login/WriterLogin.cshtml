@@ -1,4 +1,4 @@
-﻿@model EntityLayer.Concrete.Admin
+﻿@model EntityLayer.Concrete.Writer
 
 @{
     Layout = null;
@@ -14,14 +14,14 @@
 <body>
     <!-- partial:index.partial.html -->
     <div class="login-box">
-        <h2>MVC Proje Kampı Admin Girişi</h2>
-        <form method="post" action="/Login/Index">
+        <h2>MVC Proje Kampı Yazar Girişi</h2>
+        <form method="post" action="/Login/WriterLogin">
             <div class="user-box">
-                <input type="text" name="UserName" required="">
-                <label>Kullanıcı Adı</label>
+                <input type="email" name="WriterMail" required="">
+                <label>Kullanıcı Mail</label>
             </div>
             <div class="user-box">
-                <input type="password" name="Password" required="">
+                <input type="password" name="WriterPassword" required="">
                 <label>Şifre</label>
             </div>
             <button type="submit">
