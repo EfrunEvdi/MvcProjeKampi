@@ -391,3 +391,10 @@ Bu derste yazar giriş panelini ve girişini yaptık.
 
 # 78 Ders (Session İle Bilgileri Taşıma)
 Bu derste giriş yapmış kullanıcının ıd sine göre yazılarını getirdik.
+
+# 79 Ders (Session Allow Anonymous)
+Bu derste ilk olarak giriş yapmamış kullanıcıyı engellemek adına
+Global.asax'ta GlobalFilters.Filters.Add(new AuthorizeAttribute()); yazdık. Daha sonra giriş yapmış kullanıcı başlık eklediğinde ve listelendiğinde artık sessiondan idsi gidiyor.
+
+# 80 Ders (Oturum Başlık)
+Bu derste bir önceki ders aldığımız hatayı düzelttik.

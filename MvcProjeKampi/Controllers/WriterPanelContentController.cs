@@ -15,8 +15,12 @@ namespace MvcProjeKampi.Controllers
         Context context = new Context();
         public ActionResult MyContent(string p)
         {
+
             p = (string)Session["WriterMail"];
             var WriterIDInfo = context.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
+
+            TempData["ID"] = WriterIDInfo;
+
 
             var ContentValues = cm.GetListByWriter(WriterIDInfo);
             ViewBag.UN = context.Writers.Where(x => x.WriterID == WriterIDInfo).Select(y => y.WriterName + " " + y.WriterSurname).FirstOrDefault();

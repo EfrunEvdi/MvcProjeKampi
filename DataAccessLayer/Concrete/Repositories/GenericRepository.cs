@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -38,6 +39,17 @@ namespace DataAccessLayer.Concrete.Repositories
             addedEntity.State = EntityState.Added;
             //_object.Add(p);
             context.SaveChanges();
+
+            catch (DbEntityValidationException ex)
+{
+                foreach (var validationErrors in ex.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        Console.WriteLine($"Property: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
+                    }
+                }
+            }
         }
 
         public List<T> List()
