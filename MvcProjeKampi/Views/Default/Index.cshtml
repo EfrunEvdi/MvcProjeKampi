@@ -1,0 +1,81 @@
+﻿@using EntityLayer.Concrete
+@model List<Content>
+
+<section class="content">
+    <div class="container-fluid">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>@ViewBag.BA</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/Heading/Index">Başlık İşlemleri</a></li>
+                            <li class="breadcrumb-item active">@ViewBag.BA</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <div class="wrapper">
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <!-- Timelime example  -->
+                                    <!-- The time line -->
+                                    <div class="timeline timeline-inverse">
+                                        @foreach (var item in Model)
+                                        {
+
+                                            <!-- timeline time label -->
+                                            <div class="time-label">
+                                                <span class="bg-gradient-info">@(((DateTime) item.ContentDate).ToString("dd-MMMM-yyyy"))</span>
+                                            </div>
+                                            <!-- /.timeline-label -->
+                                            <!-- timeline item -->
+                                            <div>
+                                                <i class="fas fa-comment bg-gradient-success"></i>
+
+
+                                                <div class="timeline-item">
+                                                    <h3 class="timeline-header"><a href="#" class="text-dark"> <img alt="Avatar" style="width:40px" src="@item.Writer.WriterImage"> @item.Writer.WriterName @item.Writer.WriterSurname</a></h3>
+                                                    <div class="timeline-body">
+                                                        @item.ContentValue
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- END timeline item -->
+                                        }
+
+                                        @if (ViewBag.Sayi == 0)
+                                        {
+                                            <div>
+                                                <i class="fas fa-info bg-gradient-red"></i>
+                                                <div class="timeline-item">
+                                                    <h3 class="timeline-header"><a href="#" class="text-dark">Bu başlığa henüz bir içerik yazılmamış.</a></h3>
+                                                    <div class="timeline-body">
+                                                        Dilerseniz ilk içeriği siz yazabilir veya başlığı silebilirsiniz.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                        <!-- /.col -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.timeline -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- ./wrapper -->
+    </div>
+</section>

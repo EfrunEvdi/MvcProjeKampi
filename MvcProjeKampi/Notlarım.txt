@@ -398,3 +398,9 @@ Global.asax'ta GlobalFilters.Filters.Add(new AuthorizeAttribute()); yazdık. Dah
 
 # 80 Ders (Oturum Başlık)
 Bu derste bir önceki ders aldığımız hatayı düzelttik.
+
+# 81 Ders (Vitrin Sayfası)
+Bu derste DefaultController açtık ve layouttu buraya kopyalayıp foreach ile başlıkları sidebara getirdik.
+
+# 82 Ders (Vitrinde Tüm Başlıkların Listelenmesi)
+Bu derste bir önceki ders ayarladığımız layouta ait partialı oluşturup tüm contentleri çektik.
