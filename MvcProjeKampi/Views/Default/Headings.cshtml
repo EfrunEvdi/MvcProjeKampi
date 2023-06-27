@@ -199,21 +199,20 @@
                         @foreach (var item in Model)
                         {
                             <li class="nav-item">
-                                <a href="/WriterPanel/MyHeading" class="nav-link">
+                                <a href="/Default/Headings/@item.HeadingID" class="nav-link">
                                     <p>
                                         @item.HeadingName (0)
                                     </p>
                                 </a>
                             </li>
                         }
-
                     </ul>
                 </nav>
             </div>
         </aside>
 
         <div class="content-wrapper">
-            @Html.Action("Index", "Default")
+            @Html.Action("ContentByHeading", "Default")
         </div>
 
         <footer class="main-footer">

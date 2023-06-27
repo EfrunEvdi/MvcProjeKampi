@@ -404,3 +404,8 @@ Bu derste DefaultController açtık ve layouttu buraya kopyalayıp foreach ile b
 
 # 82 Ders (Vitrinde Tüm Başlıkların Listelenmesi)
 Bu derste bir önceki ders ayarladığımız layouta ait partialı oluşturup tüm contentleri çektik.
+
+# 83 Ders (Başlığa Göre Yazıların Listelenmesi)
+Bu derste sidebarda seçilen başlığa göre içerik bilgilerini getirip. Writer için tüm başlıkları listeletip istediği başlığa yazı yazma sayfasının arka planını yaptık.
+
+# 84 Ders (Yeni Entry Girişi)

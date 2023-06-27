@@ -30,6 +30,12 @@ namespace MvcProjeKampi.Controllers
             return View(values);
         }
 
+        public ActionResult AllHeading()
+        {
+            var headings = hm.GetList();
+            return View(headings);
+        }
+
         [HttpGet]
         public ActionResult NewHeading()
         {
@@ -39,7 +45,6 @@ namespace MvcProjeKampi.Controllers
                                                       Text = x.CategoryName,
                                                       Value = x.CategoryID.ToString()
                                                   }).ToList();
-
 
             ViewBag.VLC = ValueCategory;
             return View();

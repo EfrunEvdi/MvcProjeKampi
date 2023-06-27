@@ -19,9 +19,11 @@ namespace MvcProjeKampi.Controllers
             var headingList = headingManager.GetList();
             return View(headingList);
         }
-        public PartialViewResult Index()
+
+        public PartialViewResult ContentByHeading(int id = 0)
         {
-            var contentList = contentManager.GetList();
+            var contentList = contentManager.GetListByHeadingID(id);
+            ViewBag.BA = contentList.Where(x => x.HeadingID == id).Select(y => y.Heading.HeadingName).FirstOrDefault();
             return PartialView(contentList);
         }
     }

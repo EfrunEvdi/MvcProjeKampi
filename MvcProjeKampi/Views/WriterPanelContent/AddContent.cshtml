@@ -1,0 +1,60 @@
+﻿@using EntityLayer.Concrete
+@model Content
+
+@{
+    ViewBag.Title = "AddContent";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<section class="content">
+    <div class="container-fluid">
+
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Yeni İçerik Ekleme Sayfası</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/WriterPanel/AllHeading">Başlık Listesi</a></li>
+                            <li class="breadcrumb-item active">Başlığa İçerik Ekleme Sayfası</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+                <!-- general form elements -->
+                <div class="card card-secondary">
+                    <div class="card-header">
+                        <h3 class="card-title">Başlığa İçerik Ekleme Formu</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form method="post">
+                        <input type="hidden" name="HeadingID" value="@ViewBag.ID" />
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="">İçerik</label>
+                                <textarea rows="5" type="text" class="form-control" placeholder="İçeriği giriniz." name="ContentValue" required></textarea>
+                                @Html.ValidationMessageFor(x => x.ContentValue)
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-outline-primary col-md-12">İçeriği Ekle!</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
