@@ -7,6 +7,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
+using BusinessLayer.ValidationRules;
+using FluentValidation.Results;
 
 namespace MvcProjeKampi.Controllers
 {
@@ -14,11 +18,41 @@ namespace MvcProjeKampi.Controllers
     {
         HeadingManager hm = new HeadingManager(new EfHeadingDal());
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
+        WriterManager wm = new WriterManager(new EfWriterDal());
         Context context = new Context();
 
+        [HttpGet]
         public ActionResult WriterProfile()
         {
-            return View();
+            string mail = (string)Session["WriterMail"];
+            var WriterID = context.Writers.Where(x => x.WriterMail == mail).Select(y => y.WriterID).FirstOrDefault();
+
+            ViewBag.BS = context.Headings.Where(x => x.WriterID == WriterID).Count();
+            ViewBag.IS = context.Contents.Where(x => x.WriterID == WriterID).Count();
+
+            var writerValue = wm.GetByID(WriterID);
+            return View(writerValue);
+        }
+
+        [HttpPost]
+        public ActionResult WriterProfile(Writer writer)
+        {
+            WriterValidator writerValidator = new WriterValidator();
+            ValidationResult results = writerValidator.Validate(writer);
+
+            if (results.IsValid)
+            {
+                wm.WriterUpdate(writer);
+                return RedirectToAction("WriterProfile");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View(writer);
         }
 
         public ActionResult MyHeading(string p)
@@ -30,9 +64,9 @@ namespace MvcProjeKampi.Controllers
             return View(values);
         }
 
-        public ActionResult AllHeading()
+        public ActionResult AllHeading(int page = 1)
         {
-            var headings = hm.GetList();
+            var headings = hm.GetList().ToPagedList(page, 10);
             return View(headings);
         }
 

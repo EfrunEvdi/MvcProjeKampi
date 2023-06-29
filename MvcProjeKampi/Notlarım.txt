@@ -409,3 +409,16 @@ Bu derste bir önceki ders ayarladığımız layouta ait partialı oluşturup t�
 Bu derste sidebarda seçilen başlığa göre içerik bilgilerini getirip. Writer için tüm başlıkları listeletip istediği başlığa yazı yazma sayfasının arka planını yaptık.
 
 # 84 Ders (Yeni Entry Girişi)
+Bu derste istenilen başlığa yeni içerik girişi kısmını yaptık.
+
+# 85 Ders (Paging ~ Sayfalama İşlemi)
+Bu derste PagedList ve PagedList.Mvc paketlerini ekleyerek tüm başlıklar kısmında paging yaptık.
+
+# 86 Ders (Mesajlarda Session Yöntemi)
+Bu derste giriş yapmış kullanıcın mesaj alıi ve gönderiş işlemlerini maile göre ayarladık.
+
+# 87 Ders (Yazar Profil Sayfası)
+Bu derste giriş yapmış yazarın bilgilerini güncelleme sayfasını yaptık.
+
+# 88 Ders (Login İşleminin Mimariye Taşınması ve Admin Panelinde Yapılacaklar)
+Bu derste logini mimariye taşıdık.

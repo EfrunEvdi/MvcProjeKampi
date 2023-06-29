@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using BusinessLayer.ValidationRules;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
@@ -15,6 +16,7 @@ namespace MvcProjeKampi.Controllers
     {
         MessageManager mm = new MessageManager(new EfMessageDal());
         MessageValidator messagevalidator = new MessageValidator();
+        Context context = new Context();
 
         public PartialViewResult MessageListMenu()
         {
@@ -22,13 +24,17 @@ namespace MvcProjeKampi.Controllers
         }
         public ActionResult Inbox()
         {
-            var MessageListIn = mm.GetListInbox();
+            string mail = (string)Session["WriterMail"];
+
+            var MessageListIn = mm.GetListInbox(mail);
             return View(MessageListIn);
         }
 
         public ActionResult Sendbox()
         {
-            var MessageListSend = mm.GetListSendbox();
+            string mail = (string)Session["WriterMail"];
+
+            var MessageListSend = mm.GetListSendbox(mail);
             return View(MessageListSend);
         }
 
@@ -54,10 +60,13 @@ namespace MvcProjeKampi.Controllers
         public ActionResult NewMessage(Message message)
         {
             ValidationResult results = messagevalidator.Validate(message);
+            string mail = (string)Session["WriterMail"];
+            var WriterID = context.Writers.Where(x => x.WriterMail == mail).Select(y => y.WriterID).FirstOrDefault();
 
             if (results.IsValid)
             {
                 message.MessageDate = DateTime.Now;
+                message.SenderMail = mail;
                 mm.MessageAdd(message);
                 return RedirectToAction("Sendbox", "WriterPanelMessage");
             }
