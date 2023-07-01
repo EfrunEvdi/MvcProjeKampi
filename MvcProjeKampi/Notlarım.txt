@@ -422,3 +422,9 @@ Bu derste giriş yapmış yazarın bilgilerini güncelleme sayfasını yaptık.
 
 # 88 Ders (Login İşleminin Mimariye Taşınması ve Admin Panelinde Yapılacaklar)
 Bu derste logini mimariye taşıdık.
+
+# 89 Ders (Vitrin 1)
+Bu derste Vitrin temasını indirdik ve dinamik olarak türkçeleştirmeye başladık.
+
+# 90 Ders (Vitrin 2)
+Bu derste ana sayfaya devam ettik.
