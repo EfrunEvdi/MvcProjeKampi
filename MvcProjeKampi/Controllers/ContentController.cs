@@ -19,6 +19,21 @@ namespace MvcProjeKampi.Controllers
             return View();
         }
 
+        public ActionResult GetAllContent(string p)
+        {
+
+            if (!string.IsNullOrEmpty(p))
+            {
+                var values = cm.GetList(p);
+                return View(values);
+            }
+            else
+            {
+                var values = cm.GetList("");
+                return View(values);
+            }
+        }
+
         public ActionResult ContentByHeading(int id)
         {
             var ContentValues = cm.GetListByHeadingID(id);
