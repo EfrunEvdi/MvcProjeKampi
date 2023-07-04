@@ -433,3 +433,10 @@ Bu derste ana sayfaya devam ettik.
 Bu derste ana sayfaya devam ettik.
 
 # 92 Ders (Arama İşlemi)
+Bu derste content tablosu için arama sayfası oluşturduk.
+
+# 93 Ders (IFrame, Yazar Görselleri)
+Bu derste Ifareme olarak konum ekledik.
+
+# 94 Ders (Google Chartlar)
+Bu derste google chart yaptık.
