@@ -1,0 +1,84 @@
+﻿﻿@using EntityLayer.Concrete
+@model List<Admin>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Admin İşlemleri</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/Admin/Index">Admin İşlemleri</a></li>
+                            @*<li class="breadcrumb-item active">Contacts</li>*@
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+        </section>
+        <section class="content">
+            <!-- Default box -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Adminler</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-striped projects text-center">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Kullanıcı Mail</th>
+                                <th>Yetki</th>
+                                <th>İştem Seçiniz</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.AdminID</td>
+                                    <td>
+                                        <a>@item.UserName</a>
+                                    </td>
+                                    <td>
+                                        <a>@item.Role</a>
+                                    </td>
+                                    <td class="project-actions">
+                                        <a class="btn btn-info btn-sm" href="/Authorization/EditAdmin/@item.AdminID">
+                                            <i class="fas fa-pencil-alt"> Düzenle</i>
+                                        </a>
+                                        <a class="btn btn-info btn-sm" href="/Authorization/DeleteAdmin/@item.AdminID">
+                                            <i class="fas fa-close"> Sil</i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <div class="card-footer clearfix">
+                        <a href="/Authorization/AddAdmin/" class="btn btn-outline-primary col-md-12">Yeni Admin Ekle!</a>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </section>
+    </div>
+</section>

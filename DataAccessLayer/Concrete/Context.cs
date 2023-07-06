@@ -19,5 +19,6 @@ namespace DataAccessLayer.Concrete
         public DbSet<ImageFile> ImageFiles { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Writer> Writers { get; set; }
+        public IEnumerable<object> Content { get; set; }
     }
 }

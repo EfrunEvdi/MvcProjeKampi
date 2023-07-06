@@ -440,3 +440,12 @@ Bu derste Ifareme olarak konum ekledik.
 
 # 94 Ders (Google Chartlar)
 Bu derste google chart yaptık.
+
+# 95 Ders (Raporlama)
+Bu derste hazır bir şablon ile raporlama öğrendik. Güzeldi.
+
+# 96 Ders (Yetkilendirme Düzenlemeleri)
+Bu derste sweet alert yapıldı. Admin için listeleme yapıldı.
+
+# 97 Ders (Yetkilendirme Düzenlemeleri Tamamlanması)
+Bu derste yeni admin ekleme ve düzenleme yapıldı. Rolleri dropdown olarak çekmek ödev.

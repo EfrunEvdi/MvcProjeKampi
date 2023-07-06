@@ -198,10 +198,11 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         @foreach (var item in Model)
                         {
+                            int id = item.HeadingID;
                             <li class="nav-item">
-                                <a href="/Default/Headings/@item.HeadingID" class="nav-link">
+                                <a href="/Default/Headings/@item.HeadingID " class="nav-link">
                                     <p>
-                                        @item.HeadingName (0)
+                                        @item.HeadingName
                                     </p>
                                 </a>
                             </li>

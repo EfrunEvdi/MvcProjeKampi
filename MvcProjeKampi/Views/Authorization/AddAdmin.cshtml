@@ -1,0 +1,65 @@
+﻿@model EntityLayer.Concrete.Admin
+
+@{
+    ViewBag.Title = "AddAdmin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Yeni Admin Ekleme Sayfası</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/Authorization/Index">Admin Listesi</a></li>
+                            <li class="breadcrumb-item active">Yeni Admin Ekleme Sayfası</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+                <!-- general form elements -->
+                <div class="card card-secondary">
+                    <div class="card-header">
+                        <h3 class="card-title">Yeni Admin Ekleme Formu</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form method="post">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="">Admin Adı</label>
+                                <input type="text" class="form-control" placeholder="Admin adını giriniz." name="UserName" required>
+                                @Html.ValidationMessageFor(x => x.UserName)
+                            </div>
+                            <div class="form-group">
+                                <label for="">Admin Şifre</label>
+                                <input type="text" class="form-control" placeholder="Admin şifresini giriniz." name="Password" required>
+                                @Html.ValidationMessageFor(x => x.Password)
+                            </div>
+                            <div class="form-group">
+                                <label for="">Admin Rolü</label>
+                                <input type="text" class="form-control" placeholder="Admin rolünü giriniz." name="Role" required>
+                                @Html.ValidationMessageFor(x => x.Role)
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-outline-primary col-md-12">Yeni Admin Ekle!</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+    </div>
+</section>

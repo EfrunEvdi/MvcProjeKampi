@@ -22,6 +22,7 @@ namespace MvcProjeKampi.Controllers
         {
             return PartialView();
         }
+
         public ActionResult Inbox()
         {
             string mail = (string)Session["WriterMail"];
@@ -34,7 +35,7 @@ namespace MvcProjeKampi.Controllers
         {
             string mail = (string)Session["WriterMail"];
 
-            var MessageListSend = mm.GetListSendbox(mail);
+            var MessageListSend = mm.GetListSendbox(mail).OrderByDescending(x => x.MessageDate).ToList();
             return View(MessageListSend);
         }
 
