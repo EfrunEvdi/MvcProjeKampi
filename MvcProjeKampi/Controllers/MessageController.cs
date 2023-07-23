@@ -23,7 +23,7 @@ namespace MvcProjeKampi.Controllers
         {
             string mail = (string)Session["WriterMail"];
 
-            var MessageListIn = mm.GetListInbox(mail);
+            var MessageListIn = mm.GetListInbox("efruncetkin@gmail.com");
             return View(MessageListIn);
         }
 
@@ -31,7 +31,7 @@ namespace MvcProjeKampi.Controllers
         {
             string mail = (string)Session["WriterMail"];
 
-            var MessageListSend = mm.GetListSendbox(mail);
+            var MessageListSend = mm.GetListSendbox("efruncetkin@gmail.com");
             return View(MessageListSend);
         }
 

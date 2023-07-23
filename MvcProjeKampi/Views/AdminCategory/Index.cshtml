@@ -37,8 +37,8 @@
                                 <tr>
                                     <th style="width: 10px">#</th>
                                     <th>Kategori Adı</th>
-                                    <th>İşlem Seçiniz</th>
                                     <th>Durum</th>
+                                    <th>İşlem Seçiniz</th>
                                 </tr>
                             </thead>
                             <tbody class="text-center">
@@ -47,12 +47,6 @@
                                     <tr>
                                         <td>@item.CategoryID</td>
                                         <td>@item.CategoryName</td>
-                                        <td>
-                                            <a href="#" class="btn btn-outline-info col-md-3">Başlıklar</a>
-                                            <a href="/AdminCategory/UpdateCategory/@item.CategoryID" class="btn btn-outline-warning col-md-3">Güncelle</a>
-
-                                            <a href="/AdminCategory/DeleteCategory/@item.CategoryID" class="btn btn-outline-danger col-md-3">Sil</a>
-                                        </td>
 
                                         @if (item.CategoryStatus == true)
                                         {
@@ -62,6 +56,18 @@
                                         {
                                             <td><span class="badge bg-danger">Pasif</span></td>
                                         }
+
+                                        <td class="project-actions">
+                                            <a class="btn btn-primary btn-sm" href="#">
+                                                <i class="fas fa-folder"> İçerik</i>
+                                            </a>
+                                            <a class="btn btn-info btn-sm" href="/AdminCategory/UpdateCategory/@item.CategoryID">
+                                                <i class="fas fa-pencil-alt"> Düzenle</i>
+                                            </a>
+                                            <a class="btn btn-danger btn-sm" href="/AdminCategory/DeleteCategory/@item.CategoryID">
+                                                <i class="fas fa-caret-square-down"> Sil</i>
+                                            </a>
+                                        </td>
                                     </tr>
                                 }
                             </tbody>

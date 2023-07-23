@@ -55,6 +55,7 @@ namespace MvcProjeKampi.Controllers
         public ActionResult AddHeading(Heading heading)
         {
             heading.HeadingDate = DateTime.Now;
+            heading.HeadingStatus = true;
             hm.HeadingAdd(heading);
             return RedirectToAction("Index");
         }

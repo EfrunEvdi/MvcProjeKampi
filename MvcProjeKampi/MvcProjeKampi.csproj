@@ -2476,7 +2476,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Test.cshtml" />
     <Content Include="Views\Shared\_Deneme.cshtml" />
     <Content Include="Views\Test\Index.cshtml" />
     <Content Include="Views\Test\Test2.cshtml" />
@@ -2525,7 +2524,6 @@
     <Content Include="Views\Default\ContentByHeading.cshtml" />
     <Content Include="Views\WriterPanel\AllHeading.cshtml" />
     <Content Include="Views\WriterPanelContent\AddContent.cshtml" />
-    <Content Include="Views\WriterPanelContent\ToDoList.cshtml" />
     <Content Include="Views\Content\GetAllContent.cshtml" />
     <Content Include="Views\Chart\Index.cshtml" />
     <Content Include="Views\Heading\HeadingReport.cshtml" />
@@ -2533,6 +2531,9 @@
     <Content Include="Views\Authorization\Index.cshtml" />
     <Content Include="Views\Authorization\AddAdmin.cshtml" />
     <Content Include="Views\Authorization\EditAdmin.cshtml" />
+    <Content Include="Views\Home\ContactUs.cshtml" />
+    <Content Include="Views\WriterPanelContent\ContentByHeading.cshtml" />
+    <Content Include="Views\Content\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

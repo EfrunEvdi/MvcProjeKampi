@@ -43,7 +43,7 @@ namespace MvcProjeKampi.Controllers
             string p = (string)Session["WriterMail"];
             var WriterIDInfo = context.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
 
-            content.ContentDate= DateTime.Now;
+            content.ContentDate = DateTime.Now;
             content.ContentStatus = true;
             content.WriterID = WriterIDInfo;
             cm.ContentAdd(content);
@@ -53,6 +53,15 @@ namespace MvcProjeKampi.Controllers
         public ActionResult ToDoList()
         {
             return View();
+        }
+
+        public ActionResult ContentByHeading(int id)
+        {
+            var ContentValues = cm.GetListByHeadingID(id);
+            ViewBag.ID = id;
+            ViewBag.BA = context.Headings.Where(x => x.HeadingID == id).Select(y => y.HeadingName).FirstOrDefault();
+            ViewBag.Sayi = ContentValues.Count();
+            return View(ContentValues);
         }
     }
 }

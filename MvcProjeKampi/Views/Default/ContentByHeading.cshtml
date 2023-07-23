@@ -10,12 +10,12 @@
                     <div class="col-sm-6">
                         <h1>@ViewBag.BA</h1>
                     </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="/Heading/Index">Başlık İşlemleri</a></li>
-                            <li class="breadcrumb-item active">@ViewBag.BA</li>
-                        </ol>
-                    </div>
+                    @*<div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="/Heading/Index">Başlık İşlemleri</a></li>
+                                <li class="breadcrumb-item active">@ViewBag.BA</li>
+                            </ol>
+                        </div>*@
                 </div>
             </div><!-- /.container-fluid -->
         </section>
@@ -67,6 +67,9 @@
                                         }
                                         <!-- /.col -->
                                     </div>
+                                    <a class="btn btn-info btn-sm" href="/WriterPanelContent/AddContent/@ViewBag.ID">
+                                        <i class="fas fa-pencil-alt"> Bu Başlığa Yaz</i>
+                                    </a>
                                 </div>
                             </div>
                             <!-- /.timeline -->

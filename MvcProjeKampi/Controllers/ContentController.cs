@@ -16,7 +16,9 @@ namespace MvcProjeKampi.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var values = cm.TGetList();
+            ViewBag.Sayi = values.Count();
+            return View(values);
         }
 
         public ActionResult GetAllContent(string p)

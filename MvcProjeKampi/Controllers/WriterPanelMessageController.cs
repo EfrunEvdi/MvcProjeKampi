@@ -26,15 +26,13 @@ namespace MvcProjeKampi.Controllers
         public ActionResult Inbox()
         {
             string mail = (string)Session["WriterMail"];
-
-            var MessageListIn = mm.GetListInbox(mail);
+            var MessageListIn = mm.GetListInbox(mail).OrderByDescending(x => x.MessageDate).ToList();
             return View(MessageListIn);
         }
 
         public ActionResult Sendbox()
         {
             string mail = (string)Session["WriterMail"];
-
             var MessageListSend = mm.GetListSendbox(mail).OrderByDescending(x => x.MessageDate).ToList();
             return View(MessageListSend);
         }

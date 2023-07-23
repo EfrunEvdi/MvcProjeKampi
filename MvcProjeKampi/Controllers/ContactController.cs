@@ -30,9 +30,11 @@ namespace MvcProjeKampi.Controllers
 
         public ActionResult MessageListMenu()
         {
+            string mail = (string)Session["WriterMail"];
+
             ViewBag.CV = context.Contacts.Count();
-            ViewBag.IV = context.Messages.Where(x => x.ReceiverMail == "admin@gmail.com").Count();
-            ViewBag.SV = context.Messages.Where(x => x.SenderMail == "admin@gmail.com").Count();
+            ViewBag.IV = context.Messages.Where(x => x.ReceiverMail == mail).Count();
+            ViewBag.SV = context.Messages.Where(x => x.SenderMail == mail).Count();
             ViewBag.DV = context.Messages.Where(x => x.MessageIsDraft == false).Count();
             ViewBag.TV = context.Messages.Where(x => x.MessageStatus == false).Count();
             return PartialView();

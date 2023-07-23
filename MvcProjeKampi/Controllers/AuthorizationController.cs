@@ -45,5 +45,11 @@ namespace MvcProjeKampi.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult DeleteAdmin(int id)
+        {
+            var result = adminManager.GetByID(id);
+            adminManager.AdminDelete(result);
+            return RedirectToAction("Index");
+        }
     }
 }

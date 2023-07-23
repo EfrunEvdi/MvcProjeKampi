@@ -2,8 +2,8 @@
 @model List<Content>
 
 @{
-    ViewBag.Title = "MyContent";
-    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 
     string[] renkler = { "blue", "cyan", "danger", "dark", "fuchsia", "gray", "gray-dark", "green", "indigo", "info", "light", "lightblue", "lime", "maroon", "navy", "olive", "orange", "pink", "primary", "purple", "red", "secondary", "success", "teal", "warning", "white", "yellow" };
 
@@ -21,13 +21,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <div class="timeline-item">
-                            <h3 class="timeline-header"><a href="#" class="text-dark"> <img alt="Avatar" style="width:70px" src="@ViewBag.PP"> @ViewBag.UN</a></h3>
-                        </div>
+                        <h1>Tüm İçerik</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="/WriterPanelContent/MyContent">İçerik Listesi</a></li>
+                            <li class="breadcrumb-item"><a href="/Content/Index">Yazı İşlemleri</a></li>
+                            <li class="breadcrumb-item active"></li>
                         </ol>
                     </div>
                 </div>
@@ -58,7 +57,7 @@
 
 
                                                 <div class="timeline-item">
-                                                    <h3 class="timeline-header"> <b> @item.Heading.HeadingName</b></h3>
+                                                    <h3 class="timeline-header"><a href="#" class="text-dark"> <img alt="Avatar" style="width:40px" src="@item.Writer.WriterImage"> @item.Writer.WriterName @item.Writer.WriterSurname</a></h3>
                                                     <div class="timeline-body">
                                                         @item.ContentValue
                                                     </div>

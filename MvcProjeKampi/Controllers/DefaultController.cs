@@ -24,6 +24,7 @@ namespace MvcProjeKampi.Controllers
         {
             var contentList = contentManager.GetListByHeadingID(id);
             ViewBag.BA = contentList.Where(x => x.HeadingID == id).Select(y => y.Heading.HeadingName).FirstOrDefault();
+            ViewBag.ID = id;
             return PartialView(contentList);
         }
     }

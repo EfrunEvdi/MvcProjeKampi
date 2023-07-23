@@ -7,7 +7,7 @@
     {
         public override void Up()
         {
-            DropTable("dbo.Drafts");
+            //DropTable("dbo.Drafts");
         }
         
         public override void Down()
